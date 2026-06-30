@@ -78,6 +78,37 @@
             //    Console.WriteLine("you entered a wrong number");
             //}
 
-        }
+            ///////////////////////////////////////////////////////////////
+
+            Console.WriteLine("welcome to main menu:");
+            Console.WriteLine("1.Deposite");
+            Console.WriteLine("2.Withdraw");
+            Console.WriteLine("3.Balance check");
+
+            Console.WriteLine("please choose an option: ");
+            int option = int.Parse(Console.ReadLine());
+
+            switch (option)
+            {
+                case 1:
+                    Console.WriteLine("deposited");
+                    break;
+
+
+                case 2:
+                    Console.WriteLine("withdrawed");
+                    break;
+
+
+                case 3:
+                    Console.WriteLine("your balance = ");
+                    break;
+
+                default:
+                    Console.WriteLine("please choose a correct option");
+                    break;
+             }
+
+            }
     }
 }
