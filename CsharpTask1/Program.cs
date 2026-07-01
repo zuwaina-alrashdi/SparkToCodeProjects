@@ -77,38 +77,62 @@ namespace CsharpTask1
 
             // Task 5 - Grade Letter Lookup
 
-            Console.Write("Enter your grade (A, B, C, D, F): ");
-            char degree = char.Parse(Console.ReadLine());
+            //Console.Write("Enter your grade (A, B, C, D, F): ");
+            //char degree = char.Parse(Console.ReadLine());
 
-            switch (degree)
+            //switch (degree)
+            //{
+            //    case 'A':
+            //        Console.WriteLine("Excellent");
+            //        break;
+
+
+            //    case 'B':
+            //        Console.WriteLine("Very Good");
+            //        break;
+
+
+            //    case 'C':
+            //        Console.WriteLine("Good");
+            //        break;
+
+
+            //    case 'D':
+            //        Console.WriteLine("Pass");
+            //        break;
+
+
+            //    case 'F':
+            //        Console.WriteLine("Fail");
+            //        break;
+
+            //    default:
+            //        Console.WriteLine("Invalid grade");
+            //        break;
+            //}
+
+            ////////////////////////////////////////////////////
+
+            // Task 6 - Temperature Converter
+
+            Console.Write("Enter the Temperature in Celsius: ");
+            double celsius = double.Parse(Console.ReadLine());
+
+            double fahrenheit = (celsius * 9 / 5) + 32;
+
+            Console.WriteLine("Temperature in Fahrenheit: " + fahrenheit);
+
+            if (celsius < 10)
             {
-                case 'A':
-                    Console.WriteLine("Excellent");
-                    break;
-
-
-                case 'B':
-                    Console.WriteLine("Very Good");
-                    break;
-
-
-                case 'C':
-                    Console.WriteLine("Good");
-                    break;
-
-
-                case 'D':
-                    Console.WriteLine("Pass");
-                    break;
-
-
-                case 'F':
-                    Console.WriteLine("Fail");
-                    break;
-
-                default:
-                    Console.WriteLine("Invalid grade");
-                    break;
+                Console.WriteLine("The Weather is Cold");
+            }
+            else if (celsius >= 10 && celsius <= 30)
+            {
+                Console.WriteLine("The Weather is Mild");
+            }
+            else
+            {
+                Console.WriteLine("The Weather is Hot");
             }
 
         }
