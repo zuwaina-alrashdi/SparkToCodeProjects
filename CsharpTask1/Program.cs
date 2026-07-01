@@ -235,59 +235,90 @@ namespace CsharpTask1
 
             // Task 10 - Mini Calculator
 
-            Console.Write("Enter the First Number: ");
-            double firstNumber = double.Parse(Console.ReadLine());
+            //Console.Write("Enter the First Number: ");
+            //double firstNumber = double.Parse(Console.ReadLine());
 
-            Console.Write("Enter the Second Number: ");
-            double secondNumber = double.Parse(Console.ReadLine());
+            //Console.Write("Enter the Second Number: ");
+            //double secondNumber = double.Parse(Console.ReadLine());
 
-            Console.Write("Enter an Operator (+, -, *, /, %): ");
-            char operation = char.Parse(Console.ReadLine());
+            //Console.Write("Enter an Operator (+, -, *, /, %): ");
+            //char operation = char.Parse(Console.ReadLine());
 
-            switch (operation)
+            //switch (operation)
+            //{
+            //    case '+':
+            //        Console.WriteLine("Result: " + (firstNumber + secondNumber));
+            //        break;
+
+
+            //    case '-':
+            //        Console.WriteLine("Result: " + (firstNumber - secondNumber));
+            //        break;
+
+
+            //    case '*':
+            //        Console.WriteLine("Result: " + (firstNumber * secondNumber));
+            //        break;
+
+
+            //    case '/':
+            //        if (secondNumber != 0)
+            //        {
+            //            Console.WriteLine("Result: " + (firstNumber / secondNumber));
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("Cannot divide by zero");
+            //        }
+            //        break;
+
+            //    case '%':
+            //        if (secondNumber != 0)
+            //        {
+            //            Console.WriteLine("Result: " + (firstNumber % secondNumber));
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("Cannot divide by zero");
+            //        }
+            //        break;
+
+            //    default:
+            //        Console.WriteLine("Invalid operator");
+            //        break;
+            //}
+
+            ////////////////////////////////////////////////////
+
+            // Task 11 - Loan Eligibility System
+
+            Console.Write("Enter Your Age: ");
+            int age = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter Your Monthly Income: ");
+            double income = double.Parse(Console.ReadLine());
+
+            Console.Write("Do You Have an Existing Loan (yes/no)?: ");
+            string answer = Console.ReadLine();
+
+            bool loan = answer == "yes";
+
+            if (age >= 21 && age <= 60 && income >= 400 && !loan)
             {
-                case '+':
-                    Console.WriteLine("Result: " + (firstNumber + secondNumber));
-                    break;
-
-
-                case '-':
-                    Console.WriteLine("Result: " + (firstNumber - secondNumber));
-                    break;
-
-
-                case '*':
-                    Console.WriteLine("Result: " + (firstNumber * secondNumber));
-                    break;
-
-
-                case '/':
-                    if (secondNumber != 0)
-                    {
-                        Console.WriteLine("Result: " + (firstNumber / secondNumber));
-                    }
-                    else
-                    {
-                        Console.WriteLine("Cannot divide by zero");
-                    }
-                    break;
-
-                case '%':
-                    if (secondNumber != 0)
-                    {
-                        Console.WriteLine("Result: " + (firstNumber % secondNumber));
-                    }
-                    else
-                    {
-                        Console.WriteLine("Cannot divide by zero");
-                    }
-                    break;
-
-                default:
-                    Console.WriteLine("Invalid operator");
-                    break;
+                Console.WriteLine("You are eligible for the loan.");
             }
-
+            else if (age < 21 || age > 60)
+            {
+                Console.WriteLine("Not eligible, Age is out of range.");
+            }
+            else if (income < 400)
+            {
+                Console.WriteLine("Not eligible, Income is too low.");
+            }
+            else
+            {
+                Console.WriteLine("Not eligible, You have an existing loan.");
+            }
 
 
         }
