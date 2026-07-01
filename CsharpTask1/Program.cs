@@ -162,30 +162,77 @@ namespace CsharpTask1
 
             // Task 8 -  Restaurant Bill with Membership Discount
 
-            Console.Write("Enter Your Total Bill Amount: ");
-            float bill = float.Parse(Console.ReadLine());
+            //Console.Write("Enter Your Total Bill Amount: ");
+            //float bill = float.Parse(Console.ReadLine());
 
-            Console.Write("Are you a Loyalty Member (yes/no)?: ");
-            string answer = Console.ReadLine();
+            //Console.Write("Are you a Loyalty Member (yes/no)?: ");
+            //string answer = Console.ReadLine();
 
-            bool LoyaltyMember = answer == "yes";
+            //bool LoyaltyMember = answer == "yes";
 
-            if ( bill > 20 && LoyaltyMember)
+            //if ( bill > 20 && LoyaltyMember)
+            //{
+            //    float discount = bill * 0.15f;
+            //    float finalBill = bill - discount; 
+
+            //    Console.WriteLine("Original Bill: " + bill + " OMR " );
+            //    Console.WriteLine("Discount: " + discount + " OMR ");
+            //    Console.WriteLine("Final Amount: " + finalBill + " OMR ");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Original Bill: " + bill + " OMR ");
+            //    Console.WriteLine("Discount: 0 OMR");
+            //    Console.WriteLine("Final Amount: " + bill + " OMR ");
+            //}
+
+            ////////////////////////////////////////////////////
+
+            // Task 9 - Day Name Finder
+
+            Console.Write("Enter a Number From 1 to 7: ");
+            int number = int.Parse(Console.ReadLine());
+
+            switch (number)
             {
-                float discount = bill * 0.15f;
-                float finalBill = bill - discount; 
+                case 1:
+                    Console.WriteLine("Sunday");
+                    break;
 
-                Console.WriteLine("Original Bill: " + bill + " OMR " );
-                Console.WriteLine("Discount: " + discount + " OMR ");
-                Console.WriteLine("Final Amount: " + finalBill + " OMR ");
+
+                case 2:
+                    Console.WriteLine("Monday");
+                    break;
+
+
+                case 3:
+                    Console.WriteLine("Tuesday");
+                    break;
+
+
+                case 4:
+                    Console.WriteLine("Wednesday");
+                    break;
+
+
+                case 5:
+                    Console.WriteLine("Thursday");
+                    break;
+
+                case 6:
+                    Console.WriteLine("Friday");
+                    break;
+
+                case 7:
+                    Console.WriteLine("Saturday");
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid day number");
+                    break;
             }
-            else
-            {
-                Console.WriteLine("Original Bill: " + bill + " OMR ");
-                Console.WriteLine("Discount: 0 OMR");
-                Console.WriteLine("Final Amount: " + bill + " OMR ");
-            }
+        }
+
 
         }
     }
-}
