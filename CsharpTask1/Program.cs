@@ -39,16 +39,37 @@ namespace CsharpTask1
 
             // Task 3 - Even or Odd Checker
 
-            Console.WriteLine("Enter a Whole Number: ");
-            int number = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter a Whole Number: ");
+            //int number = int.Parse(Console.ReadLine());
 
-            if (number % 2 == 0 )
+            //if (number % 2 == 0 )
+            //{
+            //    Console.WriteLine("The Number is Even");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The Number is Odd");
+            //}
+
+            ////////////////////////////////////////////////////
+
+            // Task 4 - Voting Eligibility
+
+            Console.Write("Enter Your Age: ");
+            int age = int.Parse(Console.ReadLine());
+
+            Console.Write("Do you hold a valid national ID (yes/no)?: ");
+            string answer = Console.ReadLine();
+
+            bool ValidID = answer == "yes";
+
+            if (age >= 18 && ValidID)
             {
-                Console.WriteLine("The Number is Even");
+                Console.WriteLine("You are Eligible to Vote.");
             }
             else
             {
-                Console.WriteLine("The Number is Odd");
+                Console.WriteLine("You are not Eligible to Vote.");
             }
 
         }
