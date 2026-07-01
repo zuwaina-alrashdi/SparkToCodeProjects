@@ -139,23 +139,51 @@ namespace CsharpTask1
 
             // Task 7 - Movie Ticket Pricing
 
-            Console.WriteLine("Enter your Age: ");
-            int age = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter your Age: ");
+            //int age = int.Parse(Console.ReadLine());
 
-            if (age >= 0 && age <= 12)
+            //if (age >= 0 && age <= 12)
+            //{
+            //    Console.WriteLine("Category: Children");
+            //    Console.WriteLine("Price: 2.000 OMR");
+            //}
+            //else if (age >= 13 && age <= 59)
+            //{
+            //    Console.WriteLine("Category: Adults");
+            //    Console.WriteLine("Price: 5.000 OMR");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Category: Seniors");
+            //    Console.WriteLine("Price: 3.000 OMR");
+            //}
+
+            ////////////////////////////////////////////////////
+
+            // Task 8 -  Restaurant Bill with Membership Discount
+
+            Console.Write("Enter Your Total Bill Amount: ");
+            float bill = float.Parse(Console.ReadLine());
+
+            Console.Write("Are you a Loyalty Member (yes/no)?: ");
+            string answer = Console.ReadLine();
+
+            bool LoyaltyMember = answer == "yes";
+
+            if ( bill > 20 && LoyaltyMember)
             {
-                Console.WriteLine("Category: Children");
-                Console.WriteLine("Price: 2.000 OMR");
-            }
-            else if (age >= 13 && age <= 59)
-            {
-                Console.WriteLine("Category: Adults");
-                Console.WriteLine("Price: 5.000 OMR");
+                float discount = bill * 0.15f;
+                float finalBill = bill - discount; 
+
+                Console.WriteLine("Original Bill: " + bill + " OMR " );
+                Console.WriteLine("Discount: " + discount + " OMR ");
+                Console.WriteLine("Final Amount: " + finalBill + " OMR ");
             }
             else
             {
-                Console.WriteLine("Category: Seniors");
-                Console.WriteLine("Price: 3.000 OMR");
+                Console.WriteLine("Original Bill: " + bill + " OMR ");
+                Console.WriteLine("Discount: 0 OMR");
+                Console.WriteLine("Final Amount: " + bill + " OMR ");
             }
 
         }
