@@ -115,24 +115,47 @@ namespace CsharpTask1
 
             // Task 6 - Temperature Converter
 
-            Console.Write("Enter the Temperature in Celsius: ");
-            double celsius = double.Parse(Console.ReadLine());
+            //Console.Write("Enter the Temperature in Celsius: ");
+            //double celsius = double.Parse(Console.ReadLine());
 
-            double fahrenheit = (celsius * 9 / 5) + 32;
+            //double fahrenheit = (celsius * 9 / 5) + 32;
 
-            Console.WriteLine("Temperature in Fahrenheit: " + fahrenheit);
+            //Console.WriteLine("Temperature in Fahrenheit: " + fahrenheit);
 
-            if (celsius < 10)
+            //if (celsius < 10)
+            //{
+            //    Console.WriteLine("The Weather is Cold");
+            //}
+            //else if (celsius >= 10 && celsius <= 30)
+            //{
+            //    Console.WriteLine("The Weather is Mild");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The Weather is Hot");
+            //}
+
+            ////////////////////////////////////////////////////
+
+            // Task 7 - Movie Ticket Pricing
+
+            Console.WriteLine("Enter your Age: ");
+            int age = int.Parse(Console.ReadLine());
+
+            if (age >= 0 && age <= 12)
             {
-                Console.WriteLine("The Weather is Cold");
+                Console.WriteLine("Category: Children");
+                Console.WriteLine("Price: 2.000 OMR");
             }
-            else if (celsius >= 10 && celsius <= 30)
+            else if (age >= 13 && age <= 59)
             {
-                Console.WriteLine("The Weather is Mild");
+                Console.WriteLine("Category: Adults");
+                Console.WriteLine("Price: 5.000 OMR");
             }
             else
             {
-                Console.WriteLine("The Weather is Hot");
+                Console.WriteLine("Category: Seniors");
+                Console.WriteLine("Price: 3.000 OMR");
             }
 
         }
