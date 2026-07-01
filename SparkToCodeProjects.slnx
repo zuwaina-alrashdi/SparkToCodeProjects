@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="CsharpSession1/CsharpSession1.csproj" />
+  <Project Path="CsharpTask1/CsharpTask1.csproj" Id="a7a09041-c132-4eea-82d9-8b9f6bad59bb" />
 </Solution>
