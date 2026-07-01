@@ -23,17 +23,33 @@ namespace CsharpTask1
 
             // Task 2 - Rectangle Calculator
 
-            Console.Write("Please Enter the Rectangle Length: ");
-            double length = double.Parse(Console.ReadLine());
+            //Console.Write("Please Enter the Rectangle Length: ");
+            //double length = double.Parse(Console.ReadLine());
 
-            Console.Write("Please Enter the Rectangle Width: ");
-            double width = double.Parse(Console.ReadLine());
+            //Console.Write("Please Enter the Rectangle Width: ");
+            //double width = double.Parse(Console.ReadLine());
 
-            double area = length * width;
-            double perimeter = 2 * (length + width);
+            //double area = length * width;
+            //double perimeter = 2 * (length + width);
 
-            Console.WriteLine("Area: " + area);
-            Console.WriteLine("perimeter: " + perimeter);
+            //Console.WriteLine("Area: " + area);
+            //Console.WriteLine("perimeter: " + perimeter);
+
+            ////////////////////////////////////////////////////
+
+            // Task 3 - Even or Odd Checker
+
+            Console.WriteLine("Enter a Whole Number: ");
+            int number = int.Parse(Console.ReadLine());
+
+            if (number % 2 == 0 )
+            {
+                Console.WriteLine("The Number is Even");
+            }
+            else
+            {
+                Console.WriteLine("The Number is Odd");
+            }
 
         }
     }
