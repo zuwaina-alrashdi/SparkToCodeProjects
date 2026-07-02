@@ -189,7 +189,6 @@
             }
 
             Console.WriteLine("Sum of even numbers: " + sum);
-
         }
     }
 }
