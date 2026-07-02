@@ -48,24 +48,56 @@
 
             // Task 4 - Password Retry
 
-            string correctPassword = "Spark2026";
-            string enteredPassword = "";
+            // string correctPassword = "Spark2026";
+            // string enteredPassword = "";
 
-            while (enteredPassword != correctPassword)
+            // while (enteredPassword != correctPassword)
+            // {
+            //     Console.Write("Enter the password: ");
+            //     enteredPassword = Console.ReadLine();
+
+            //     if (enteredPassword != correctPassword)
+            //     {
+            //         Console.WriteLine("Incorrect password, try again");
+            //     }
+
+            //     else
+            //     {
+            //         Console.WriteLine("Access Granted");
+            //     }
+            //}
+
+            //////////////////////////////////////////////////////////
+
+            // Task 5 - Number Guessing Game
+
+            int secretNumber = 42;
+            int guessNumber;
+            int attempts = 0;
+
+            do
             {
-                Console.Write("Enter the password: ");
-                enteredPassword = Console.ReadLine();
+                Console.Write("Guess the number: ");
+                guessNumber = int.Parse(Console.ReadLine());
 
-                if (enteredPassword != correctPassword)
+                attempts++;
+
+                if (guessNumber < secretNumber)
                 {
-                    Console.WriteLine("Incorrect password, try again");
+                    Console.WriteLine("Too low");
                 }
-
+                else if (guessNumber > secretNumber)
+                {
+                    Console.WriteLine("Too high");
+                }
                 else
                 {
-                    Console.WriteLine("Access Granted");
+                    Console.WriteLine("Correct!");
                 }
-        }
+            }
+            while (guessNumber != secretNumber);
+
+            Console.WriteLine("Number of attempts: " + attempts);
         }
     }
 }
