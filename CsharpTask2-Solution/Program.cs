@@ -20,17 +20,29 @@
 
             // Task 2 - Sum of Numbers 1 to N
 
-            Console.Write("Enter a positive whole number: ");
-            int positiveNumber = int.Parse(Console.ReadLine());
+            //Console.Write("Enter a positive whole number: ");
+            //int positiveNumber = int.Parse(Console.ReadLine());
 
-            int sum = 0;
+            //int sum = 0;
 
-            for (int counter = 1; counter <= positiveNumber; counter++)
+            //for (int counter = 1; counter <= positiveNumber; counter++)
+            //{
+            //    sum = sum + counter;
+            //}
+
+            //Console.WriteLine("The sum is: " + sum);
+
+            //////////////////////////////////////////////////////////
+
+            // Task 3 - Multiplication Table
+
+            Console.Write("Enter a number: ");
+            int number = int.Parse(Console.ReadLine());
+
+            for (int counter = 1; counter <= 10; counter++)
             {
-                sum = sum + counter;
+                Console.WriteLine(number + " x " + counter + " = " + (number * counter));
             }
-
-            Console.WriteLine("The sum is: " + sum);
 
         }
     }
