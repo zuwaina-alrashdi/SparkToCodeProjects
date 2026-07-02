@@ -129,47 +129,66 @@
 
             // Task 7 - Repeating Menu with Exit Option
 
-            bool exit = false;
+            //bool exit = false;
 
-            while (exit == false)
+            //while (exit == false)
+            //{
+            //    Console.WriteLine("Menu:");
+            //    Console.WriteLine("1. Say Hello");
+            //    Console.WriteLine("2. Show Greeting");
+            //    Console.WriteLine("3. Exit");
+
+            //    try
+            //    {
+            //        Console.Write("Choose an option: ");
+            //        int choice = int.Parse(Console.ReadLine());
+
+            //        switch (choice)
+            //        {
+            //            case 1:
+            //                Console.WriteLine("Hello!");
+            //                break;
+
+            //            case 2:
+            //                Console.WriteLine("Good Morning!");
+            //                break;
+
+            //            case 3:
+            //                Console.WriteLine("Goodbye!");
+            //                exit = true;
+            //                break;
+
+            //            default:
+            //                Console.WriteLine("Invalid option.");
+            //                break;
+            //        }
+            //    }
+            //    catch (FormatException)
+            //    {
+            //        Console.WriteLine("Please enter a valid number.");
+            //    }
+
+            //    Console.WriteLine();
+            //}
+
+            //////////////////////////////////////////////////////////
+
+            // Task 8 - Sum of Even Numbers Only
+
+            Console.Write("Enter a positive whole number: ");
+            int number = int.Parse(Console.ReadLine());
+
+            int sum = 0;
+
+            for (int counter = 1; counter <= number; counter++)
             {
-                Console.WriteLine("Menu:");
-                Console.WriteLine("1. Say Hello");
-                Console.WriteLine("2. Show Greeting");
-                Console.WriteLine("3. Exit");
-
-                try
+                if (counter % 2 == 0)
                 {
-                    Console.Write("Choose an option: ");
-                    int choice = int.Parse(Console.ReadLine());
-
-                    switch (choice)
-                    {
-                        case 1:
-                            Console.WriteLine("Hello!");
-                            break;
-
-                        case 2:
-                            Console.WriteLine("Good Morning!");
-                            break;
-
-                        case 3:
-                            Console.WriteLine("Goodbye!");
-                            exit = true;
-                            break;
-
-                        default:
-                            Console.WriteLine("Invalid option.");
-                            break;
-                    }
+                    sum = sum + counter;
                 }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Please enter a valid number.");
-                }
-
-                Console.WriteLine();
             }
+
+            Console.WriteLine("Sum of even numbers: " + sum);
 
         }
     }
