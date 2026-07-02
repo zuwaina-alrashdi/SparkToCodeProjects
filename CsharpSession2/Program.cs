@@ -25,12 +25,46 @@
 
             //////////////////////////////////////////////////////
 
+            //bool exitDecision = false;
+            //string userInput;
+
+            //while (exitDecision == false)
+            //{
+            //    Console.WriteLine("print menu");
+
+            //    Console.WriteLine("Do you want to exit? (y/n)");
+            //    userInput = Console.ReadLine();
+
+            //    if (userInput == "y")
+            //    {
+            //        exitDecision = true;
+            //    }
+
+
+
+
             bool exitDecision = false;
             string userInput;
+            int userchoice;
 
-            while (exitDecision == false)
+            do
             {
                 Console.WriteLine("print menu");
+
+
+                try
+                {
+
+                    Console.WriteLine("Do you want to exit? (1/2)");
+                    userchoice = int.Parse(Console.ReadLine());
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+
+                    Console.WriteLine("Invalid input. Please enter a valid number.");
+                }
 
                 Console.WriteLine("Do you want to exit? (y/n)");
                 userInput = Console.ReadLine();
@@ -39,7 +73,10 @@
                 {
                     exitDecision = true;
                 }
-            }
+
+            } while (exitDecision == false);
+
+
         }
     }
-}
+    }
