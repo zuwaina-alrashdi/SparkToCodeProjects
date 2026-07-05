@@ -61,20 +61,40 @@
 
             // Task 5 - Grade Rounding System
 
-            Console.Write("Enter your exam score: ");
-            double score = double.Parse(Console.ReadLine());
+            //Console.Write("Enter your exam score: ");
+            //double score = double.Parse(Console.ReadLine());
 
-            double roundedScore = Math.Round(score);
+            //double roundedScore = Math.Round(score);
 
-            Console.WriteLine("Rounded Score: " + roundedScore);
+            //Console.WriteLine("Rounded Score: " + roundedScore);
 
-            if (roundedScore >= 60)
+            //if (roundedScore >= 60)
+            //{
+            //    Console.WriteLine("Result: Pass");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Result: Fail");
+            //}
+
+            ///////////////////////////////////////////////////////////////////
+
+            // Task 6 - Password Strength Checker
+
+            Console.Write("Enter your password: ");
+            string password = Console.ReadLine();
+
+            if (password.Length >= 8 && !password.ToLower().Contains("password"))
             {
-                Console.WriteLine("Result: Pass");
+                Console.WriteLine("Strong Password");
+            }
+            else if (password.Length < 8)
+            {
+                Console.WriteLine("Weak Password: It must be at least 8 characters long.");
             }
             else
             {
-                Console.WriteLine("Result: Fail");
+                Console.WriteLine("Weak Password: It must not contain the word 'password'.");
             }
         }
     }
