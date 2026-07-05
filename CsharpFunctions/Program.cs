@@ -101,19 +101,49 @@
 
             // Task 7 - Clean Name Comparator
 
-            Console.Write("Enter the first name: ");
-            string firstName = Console.ReadLine();
+            //Console.Write("Enter the first name: ");
+            //string firstName = Console.ReadLine();
 
-            Console.Write("Enter the second name: ");
-            string secondName = Console.ReadLine();
+            //Console.Write("Enter the second name: ");
+            //string secondName = Console.ReadLine();
 
-            if (firstName.Trim().ToUpper() == secondName.Trim().ToUpper())
+            //if (firstName.Trim().ToUpper() == secondName.Trim().ToUpper())
+            //{
+            //    Console.WriteLine("Match");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No Match");
+            //}
+
+            ///////////////////////////////////////////////////////////////////
+
+            // Task 8 - Membership Expiry Checker
+
+            try
             {
-                Console.WriteLine("Match");
+                Console.Write("Enter the membership start date (yyyy-MM-dd): ");
+                DateTime startDate = DateTime.Parse(Console.ReadLine());
+
+                Console.Write("Enter the number of membership days: ");
+                int days = int.Parse(Console.ReadLine());
+
+                DateTime expiryDate = startDate.AddDays(days);
+
+                if (expiryDate >= DateTime.Today)
+                {
+                    Console.WriteLine("Membership Status: Active");
+                }
+                else
+                {
+                    Console.WriteLine("Membership Status: Expired");
+                }
+
+                Console.WriteLine("Expiry Date: " + expiryDate.ToString("yyyy-MM-dd"));
             }
-            else
+            catch (Exception)
             {
-                Console.WriteLine("No Match");
+                Console.WriteLine("Invalid input.");
             }
         }
     }
