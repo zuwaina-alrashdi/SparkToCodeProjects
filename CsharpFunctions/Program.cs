@@ -81,20 +81,39 @@
 
             // Task 6 - Password Strength Checker
 
-            Console.Write("Enter your password: ");
-            string password = Console.ReadLine();
+            //Console.Write("Enter your password: ");
+            //string password = Console.ReadLine();
 
-            if (password.Length >= 8 && !password.ToLower().Contains("password"))
+            //if (password.Length >= 8 && !password.ToLower().Contains("password"))
+            //{
+            //    Console.WriteLine("Strong Password");
+            //}
+            //else if (password.Length < 8)
+            //{
+            //    Console.WriteLine("Weak Password: It must be at least 8 characters long.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Weak Password: It must not contain the word 'password'.");
+            //}
+
+            ///////////////////////////////////////////////////////////////////
+
+            // Task 7 - Clean Name Comparator
+
+            Console.Write("Enter the first name: ");
+            string firstName = Console.ReadLine();
+
+            Console.Write("Enter the second name: ");
+            string secondName = Console.ReadLine();
+
+            if (firstName.Trim().ToUpper() == secondName.Trim().ToUpper())
             {
-                Console.WriteLine("Strong Password");
-            }
-            else if (password.Length < 8)
-            {
-                Console.WriteLine("Weak Password: It must be at least 8 characters long.");
+                Console.WriteLine("Match");
             }
             else
             {
-                Console.WriteLine("Weak Password: It must not contain the word 'password'.");
+                Console.WriteLine("No Match");
             }
         }
     }
