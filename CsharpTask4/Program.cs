@@ -112,35 +112,53 @@
 
             // Task 7 - Grade Letter Function
 
-            Console.Write("Enter your score: ");
-            int score = int.Parse(Console.ReadLine());
+            //    Console.Write("Enter your score: ");
+            //    int score = int.Parse(Console.ReadLine());
 
-            string grade = GetGradeLetter(score);
+            //    string grade = GetGradeLetter(score);
 
-            Console.WriteLine("Grade = " + grade);
+            //    Console.WriteLine("Grade = " + grade);
+            //}
+            //static string GetGradeLetter(int score)
+            //{
+            //    if (score >= 90)
+            //    {
+            //        return "A";
+            //    }
+            //    else if (score >= 80)
+            //    {
+            //        return "B";
+            //    }
+            //    else if (score >= 70)
+            //    {
+            //        return "C";
+            //    }
+            //    else if (score >= 60)
+            //    {
+            //        return "D";
+            //    }
+            //    else
+            //    {
+            //        return "F";
+            //    }
+
+            /////////////////////////////////////////////////////
+
+            // Task 8 - Countdown Function
+
+            Console.Write("Enter a starting number: ");
+            int number = int.Parse(Console.ReadLine());
+
+            Countdown(number);
         }
-        static string GetGradeLetter(int score)
+
+        static void Countdown(int number)
         {
-            if (score >= 90)
+            for (int counter = number; counter >= 1; counter--)
             {
-                return "A";
+                Console.WriteLine(counter);
             }
-            else if (score >= 80)
-            {
-                return "B";
-            }
-            else if (score >= 70)
-            {
-                return "C";
-            }
-            else if (score >= 60)
-            {
-                return "D";
-            }
-            else
-            {
-                return "F";
-            }
+
         }
     }
 }
