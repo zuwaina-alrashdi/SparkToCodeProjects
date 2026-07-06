@@ -51,14 +51,36 @@
 
             // Task 4 - Fixed Menu Display Function
 
-            DisplayMenu();
+            //    DisplayMenu();
+            //}
+            //static void DisplayMenu()
+            //{
+            //    Console.WriteLine("MENU: ");
+            //    Console.WriteLine("1. Start");
+            //    Console.WriteLine("2. Help");
+            //    Console.WriteLine("3. Exit");
+
+            /////////////////////////////////////////////////////
+
+            // Task 5 - Even or Odd Function
+
+            Console.Write("Enter a number: ");
+            int number = int.Parse(Console.ReadLine());
+
+            bool result = IsEven(number);
+
+            if (result)
+            {
+                Console.WriteLine("Even");
+            }
+            else
+            {
+                Console.WriteLine("Odd");
+            }
         }
-        static void DisplayMenu()
+        static bool IsEven(int number)
         {
-            Console.WriteLine("MENU: ");
-            Console.WriteLine("1. Start");
-            Console.WriteLine("2. Help");
-            Console.WriteLine("3. Exit");
+            return number % 2 == 0;
         }
     }
 }
