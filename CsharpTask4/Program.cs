@@ -64,23 +64,49 @@
 
             // Task 5 - Even or Odd Function
 
-            Console.Write("Enter a number: ");
-            int number = int.Parse(Console.ReadLine());
+            //    Console.Write("Enter a number: ");
+            //    int number = int.Parse(Console.ReadLine());
 
-            bool result = IsEven(number);
+            //    bool result = IsEven(number);
 
-            if (result)
-            {
-                Console.WriteLine("Even");
-            }
-            else
-            {
-                Console.WriteLine("Odd");
-            }
+            //    if (result)
+            //    {
+            //        Console.WriteLine("Even");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Odd");
+            //    }
+            //}
+            //static bool IsEven(int number)
+            //{
+            //    return number % 2 == 0;
+
+            /////////////////////////////////////////////////////
+
+            // Task 6 - Rectangle Area & Perimeter Functions
+
+            Console.Write("Enter the length: ");
+            double length = double.Parse(Console.ReadLine());
+
+            Console.Write("Enter the width: ");
+            double width = double.Parse(Console.ReadLine());
+
+            double area = CalculateArea(length, width);
+            double perimeter = CalculatePerimeter(length, width);
+
+            Console.WriteLine("Area = " + area);
+            Console.WriteLine("Perimeter = " + perimeter);
         }
-        static bool IsEven(int number)
+
+        static double CalculateArea(double length, double width)
         {
-            return number % 2 == 0;
+            return length * width;
+        }
+
+        static double CalculatePerimeter(double length, double width)
+        {
+            return 2 * (length + width);
         }
     }
 }
