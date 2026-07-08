@@ -6,19 +6,38 @@
         {
             // Task 1 - Fixed Grades Array
 
-            int[] grades = new int[5];
+            //int[] grades = new int[5];
 
-            for (int counter = 0; counter < grades.Length; counter++)
+            //for (int counter = 0; counter < grades.Length; counter++)
+            //{
+            //    Console.Write("Enter grade " + (counter + 1) + ": ");
+            //    grades[counter] = int.Parse(Console.ReadLine());
+            //}
+
+            //Console.WriteLine("Student Grades:");
+
+            //foreach (int grade in grades)
+            //{
+            //    Console.WriteLine(grade);
+            //}
+
+            /////////////////////////////////////////////////////////////////
+
+            // Task 2 - Dynamic To-Do List
+
+            List<string> tasks = new List<string>();
+
+            for (int counter = 0; counter < 5; counter++)
             {
-                Console.Write("Enter grade " + (counter + 1) + ": ");
-                grades[counter] = int.Parse(Console.ReadLine());
+                Console.Write("Enter task " + (counter + 1) + ": ");
+                tasks.Add(Console.ReadLine());
             }
 
-            Console.WriteLine("Student Grades:");
+            Console.WriteLine("To-Do List:");
 
-            foreach (int grade in grades)
+            foreach (string task in tasks)
             {
-                Console.WriteLine(grade);
+                Console.WriteLine("- " + task);
             }
         }
     }
