@@ -5,4 +5,5 @@
   <Project Path="CsharpTask1/CsharpTask1.csproj" Id="a7a09041-c132-4eea-82d9-8b9f6bad59bb" />
   <Project Path="CsharpTask2-Solution/CsharpTask2.csproj" Id="41666cc6-348e-4321-92d7-8d56a69a7f4c" />
   <Project Path="CsharpTask4/CsharpTask4.csproj" Id="ced37838-9458-45b7-81a6-d33bb959871a" />
+  <Project Path="CsharpTask5/CsharpTask5.csproj" Id="aa37a756-f3d8-4dd8-8e4c-2555e08f1157" />
 </Solution>
