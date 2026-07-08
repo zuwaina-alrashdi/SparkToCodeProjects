@@ -141,22 +141,50 @@
 
             // Task 7 - High Score Podium
 
-            List<int> scores = new List<int>();
+            //List<int> scores = new List<int>();
 
-            for (int counter = 0; counter < 5; counter++)
+            //for (int counter = 0; counter < 5; counter++)
+            //{
+            //    Console.Write("Enter score " + (counter + 1) + ": ");
+            //    scores.Add(int.Parse(Console.ReadLine()));
+            //}
+
+            //scores.Sort();
+            //scores.Reverse();
+
+            //Console.WriteLine("High Score Podium:");
+            //Console.WriteLine("1st place: " + scores[0]);
+            //Console.WriteLine("2nd place: " + scores[1]);
+            //Console.WriteLine("3rd place: " + scores[2]);
+
+            /////////////////////////////////////////////////////////////////
+
+            // Task 8 - Undo Last Action
+
+            Stack<string> actions = new Stack<string>();
+
+            string action = "";
+
+            while (action != "stop")
             {
-                Console.Write("Enter score " + (counter + 1) + ": ");
-                scores.Add(int.Parse(Console.ReadLine()));
+                Console.Write("Enter an action (or type 'stop' to finish): ");
+                action = Console.ReadLine();
+
+                if (action != "stop")
+                {
+                    actions.Push(action);
+                }
             }
 
-            scores.Sort();
-            scores.Reverse();
+            Console.WriteLine("Undo 1: " + actions.Pop());
+            Console.WriteLine("Undo 2: " + actions.Pop());
 
-            Console.WriteLine("High Score Podium:");
-            Console.WriteLine("1st place: " + scores[0]);
-            Console.WriteLine("2nd place: " + scores[1]);
-            Console.WriteLine("3rd place: " + scores[2]);
+            Console.WriteLine("Remaining Actions:");
 
+            foreach (string remainingAction in actions)
+            {
+                Console.WriteLine(remainingAction);
+            }
         }
     }
 }
