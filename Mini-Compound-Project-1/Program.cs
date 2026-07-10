@@ -14,6 +14,7 @@
             WithdrawMoney();
             ShowBalance();
             TransferAmount();
+            ListAllAccounts();
         }
 
         // Service 1 - Add New Account
@@ -182,6 +183,25 @@
 
             Console.WriteLine("Transfer successful!");
             Console.WriteLine("Sender New Balance: " + balances[senderIndex]);
+        }
+
+        // Service 6 - List All Accounts
+        static void ListAllAccounts()
+        {
+            if (customerNames.Count == 0)
+            {
+                Console.WriteLine("No accounts found.");
+                return;
+            }
+
+            Console.WriteLine("All Accounts:");
+
+            for (int i = 1; i < customerNames.Count; i++)
+            { 
+                Console.WriteLine("Customer Name: " + customerNames[i]);
+                Console.WriteLine("Account Number: " + accountNumbers[i]);
+                Console.WriteLine("Balance: " + balances[i]);
+            }
         }
 
     }
