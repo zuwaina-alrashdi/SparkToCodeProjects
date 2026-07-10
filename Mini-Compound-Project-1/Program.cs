@@ -15,6 +15,7 @@
             ShowBalance();
             TransferAmount();
             ListAllAccounts();
+            SearchCustomer();
         }
 
         // Service 1 - Add New Account
@@ -202,6 +203,23 @@
                 Console.WriteLine("Account Number: " + accountNumbers[i]);
                 Console.WriteLine("Balance: " + balances[i]);
             }
+        }
+
+        // Service 7 - Search Account by Customer Name
+        static void SearchCustomer()
+        {
+            Console.Write("Enter customer name: ");
+            string name = Console.ReadLine();
+
+            int index = customerNames.IndexOf(name);
+
+            if (index == -1)
+            {
+                Console.WriteLine("Customer not found.");
+                return;
+            }
+
+            Console.WriteLine("Customer Name: " + customerNames[index]);
         }
 
     }
