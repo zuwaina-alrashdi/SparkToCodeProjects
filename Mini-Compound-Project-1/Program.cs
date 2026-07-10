@@ -9,9 +9,11 @@
         static void Main(string[] args)
         {
             AddAccount();
+            AddAccount();
             DepositMoney();
             WithdrawMoney();
             ShowBalance();
+            TransferAmount();
         }
 
         // Service 1 - Add New Account
@@ -132,6 +134,54 @@
             }
 
             Console.WriteLine("Current Balance: " + balances[index]);
+        }
+
+        // Service 5 - Transfer Amount
+
+        static void TransferAmount()
+        {
+            Console.Write("Enter sender account number: ");
+            string senderAccount = Console.ReadLine();
+
+            int senderIndex = accountNumbers.IndexOf(senderAccount);
+
+            if (senderIndex == -1)
+            {
+                Console.WriteLine("Sender account not found.");
+                return;
+            }
+
+            Console.Write("Enter receiver account number: ");
+            string receiverAccount = Console.ReadLine();
+
+            int receiverIndex = accountNumbers.IndexOf(receiverAccount);
+
+            if (receiverIndex == -1)
+            {
+                Console.WriteLine("Receiver account not found.");
+                return;
+            }
+
+            Console.Write("Enter transfer amount: ");
+            double amount = double.Parse(Console.ReadLine());
+
+            if (amount <= 0)
+            {
+                Console.WriteLine("Transfer amount must be positive.");
+                return;
+            }
+
+            if (amount > balances[senderIndex])
+            {
+                Console.WriteLine("Insufficient balance.");
+                return;
+            }
+
+            balances[senderIndex] -= amount;
+            balances[receiverIndex] += amount;
+
+            Console.WriteLine("Transfer successful!");
+            Console.WriteLine("Sender New Balance: " + balances[senderIndex]);
         }
 
     }
