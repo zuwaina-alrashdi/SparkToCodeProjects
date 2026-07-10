@@ -10,6 +10,7 @@
         {
             AddAccount();
             DepositMoney();
+            WithdrawMoney(); 
         }
 
         // Service 1 - Add New Account
@@ -65,7 +66,7 @@
             Console.Write("Enter deposit amount: ");
             double amount = double.Parse(Console.ReadLine());
 
-            if (amount <= 0)
+            if (amount < 0)
             {
                 Console.WriteLine("Deposit amount must be positive.");
                 return;
@@ -77,5 +78,43 @@
             Console.WriteLine("Updated Balance: " + balances[index]);
 
         }
+
+
+        // Service 3 - Withdraw Money
+        static void WithdrawMoney()
+        {
+            Console.Write("Enter account number: ");
+            string accountNumber = Console.ReadLine();
+
+            int index = accountNumbers.IndexOf(accountNumber);
+
+            if (index == -1)
+            {
+                Console.WriteLine("Account not found.");
+                return;
+            }
+
+            Console.Write("Enter withdrawal amount: ");
+            double amount = double.Parse(Console.ReadLine());
+
+            if (amount <= 0)
+            {
+                Console.WriteLine("Withdrawal amount must be positive.");
+                return;
+            }
+
+            if (amount >= balances[index])
+            {
+                Console.WriteLine("Insufficient balance.");
+                return;
+            }
+
+            balances[index] -= amount;
+
+            Console.WriteLine("Withdrawal successful.");
+            Console.WriteLine("Updated Balance: " + balances[index]);
+        }
+
+
     }
 }
