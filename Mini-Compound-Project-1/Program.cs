@@ -10,7 +10,8 @@
         {
             AddAccount();
             DepositMoney();
-            WithdrawMoney(); 
+            WithdrawMoney();
+            ShowBalance();
         }
 
         // Service 1 - Add New Account
@@ -115,6 +116,23 @@
             Console.WriteLine("Updated Balance: " + balances[index]);
         }
 
+
+        // Service 4 - Show Balance
+        static void ShowBalance()
+        {
+            Console.Write("Enter account number: ");
+            string accountNumber = Console.ReadLine();
+
+            int index = accountNumbers.IndexOf(accountNumber);
+
+            if (index == -1)
+            {
+                Console.WriteLine("Account not found.");
+                return;
+            }
+
+            Console.WriteLine("Current Balance: " + balances[index]);
+        }
 
     }
 }
