@@ -259,7 +259,7 @@
 
             Console.WriteLine("All Accounts:");
 
-            for (int i = 1; i < customerNames.Count; i++)
+            for (int i = 0; i < customerNames.Count; i++)
             { 
                 Console.WriteLine("Customer Name: " + customerNames[i]);
                 Console.WriteLine("Account Number: " + accountNumbers[i]);
