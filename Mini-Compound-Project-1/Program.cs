@@ -245,6 +245,7 @@
 
             Console.WriteLine("Transfer successful!");
             Console.WriteLine("Sender New Balance: " + balances[senderIndex]);
+            Console.WriteLine("Receiver New Balance: " + balances[receiverIndex]);
         }
 
         // Service 6 - List All Accounts
