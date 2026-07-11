@@ -169,7 +169,7 @@
                 return;
             }
 
-            if (amount >= balances[index])
+            if (amount > balances[index])
             {
                 Console.WriteLine("Insufficient balance.");
                 return;
