@@ -1,7 +1,27 @@
 ﻿namespace OOP_Part1
 {
-    // BankAccount Class 
-    public class BankAccount
+    internal class Program
+    {
+        // Bank Account Objects
+
+        static BankAccount account1 = new BankAccount();
+        static BankAccount account2 = new BankAccount();
+
+        // Student Objects
+
+        static Student student1 = new Student();
+        static Student student2 = new Student();
+
+        // Product Objects
+
+        static Product product1 = new Product();
+        static Product product2 = new Product();
+
+    }
+}
+
+// BankAccount Class 
+public class BankAccount
     {
         // Properties
         public int AccountNumber { get; set; }
@@ -46,7 +66,6 @@
             // Placeholder for sending email
         }
     }
-}
 
 // Student Class
 public class Student
