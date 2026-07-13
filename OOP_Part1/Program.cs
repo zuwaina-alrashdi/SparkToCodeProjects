@@ -1,4 +1,6 @@
-﻿namespace OOP_Part1
+﻿using System.Security.Principal;
+
+namespace OOP_Part1
 {
     internal class Program
     {
@@ -60,133 +62,192 @@
             product2.Price = 15.750;
             product2.Stock = 20;
 
-            // Menu will be added here in the next requirement.
+            bool exitApp = false;
 
-        }
-    }
-
-}
-
-// BankAccount Class 
-public class BankAccount
-    {
-        // Properties
-        public int AccountNumber { get; set; }
-        public string HolderName { get; set; }
-        public double Balance { get; set; }
-
-        // Deposit Method
-        public void Deposit(double amount)
-        {
-            Balance += amount;
-            SendEmail();
-        }
-
-        // Withdraw Method
-        public void Withdraw(double amount)
-        {
-            if (Balance >= amount)
+            while (!exitApp)
             {
-                Balance -= amount;
+                Console.WriteLine("1. View Account Details");
+                Console.WriteLine("2. Update Student Address");
+                Console.WriteLine("3. Make a Deposit");
+                Console.WriteLine("4. Make a Withdrawal");
+                Console.WriteLine("5. View Product Details");
+                Console.WriteLine("6. Register Student");
+                Console.WriteLine("7. Compare Account Balances");
+                Console.WriteLine("8. Restock Product");
+                Console.WriteLine("9. Transfer Between Accounts");
+                Console.WriteLine("10. Update Student Grade");
+                Console.WriteLine("11. Student Report Card");
+                Console.WriteLine("12. Account Health Status");
+                Console.WriteLine("13. Bulk Sale With Revenue");
+                Console.WriteLine("14. Scholarship Eligibility Check");
+                Console.WriteLine("15. Full Balance Top-Up Flow");
+                Console.WriteLine("16. Quick Account Opening");
+                Console.WriteLine("17. Total Students Counter");
+                Console.WriteLine("18. Overdrawn Account Check");
+                Console.WriteLine("19. Set Student Security PIN");
+                Console.WriteLine("20. Exit");
+
+                Console.Write("Choose an option: ");
+
+                int choice = int.Parse(Console.ReadLine());
+
+                // Case 1 - View Account Details
+
+                switch (choice)
+                {
+
+                    case 1:
+
+                        Console.Write("Choose account (1 or 2): ");
+                        int accountChoice = int.Parse(Console.ReadLine());
+
+                        if (accountChoice == 1)
+                        {
+                            account1.CheckBalance();
+                        }
+                        else if (accountChoice == 2)
+                        {
+                            account2.CheckBalance();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid account.");
+                        }
+
+                        break;
+                }
+
+            }
+        }
+
+        // BankAccount Class 
+        public class BankAccount
+        {
+            // Properties
+            public int AccountNumber { get; set; }
+            public string HolderName { get; set; }
+            public double Balance { get; set; }
+
+            // Deposit Method
+            public void Deposit(double amount)
+            {
+                Balance += amount;
+                SendEmail();
             }
 
-            SendEmail();
+            // Withdraw Method
+            public void Withdraw(double amount)
+            {
+                if (Balance >= amount)
+                {
+                    Balance -= amount;
+                }
+
+                SendEmail();
+            }
+
+            // Check Balance Method
+            public double CheckBalance()
+            {
+                PrintInformation();
+                return Balance;
+            }
+
+            // Private Method
+            private void PrintInformation()
+            {
+                Console.WriteLine("Holder Name: " + HolderName);
+                Console.WriteLine("Balance: " + Balance);
+            }
+
+            // Private Method
+            private void SendEmail()
+            {
+                // Placeholder for sending email
+            }
         }
 
-        // Check Balance Method
-        public double CheckBalance()
+        // Student Class
+        public class Student
         {
-            PrintInformation();
-            return Balance;
+            // Properties
+            public int Grade { get; set; }
+            public string Name { get; set; }
+            public string Address { get; set; }
+
+            // Private Property
+            private string email { get; set; }
+
+            // Default Access (private)
+            int age { get; set; }
+
+            // Register Method
+            public void Register(string Email)
+            {
+                email = Email;
+                SendEmail();
+            }
+
+            // Private Method
+            private void SendEmail()
+            {
+                // Placeholder for sending email
+            }
         }
 
-        // Private Method
-        private void PrintInformation()
+        // Product Class
+        public class Product
         {
-            Console.WriteLine("Holder Name: " + HolderName);
-            Console.WriteLine("Balance: " + Balance);
+            // Properties
+            public int ProductID { get; set; }
+            public string ProductName { get; set; }
+            public double Price { get; set; }
+            public int Stock { get; set; }
+
+            // Method
+            public void Restock(int quantity)
+            {
+                Stock += quantity;
+                LogTransaction();
+            }
+
+            // Method
+            public void Sell(int quantity)
+            {
+                if (Stock >= quantity)
+                {
+                    Stock -= quantity;
+                }
+
+                LogTransaction();
+            }
+
+            // Method
+            public void ViewDetails()
+            {
+                PrintDetails();
+            }
+            public double GetInventoryValue()
+            {
+                PrintDetails();
+                return Price * Stock;
+            }
+
+            // Private Method
+            private void PrintDetails()
+            {
+                Console.WriteLine("Product ID: " + ProductID);
+                Console.WriteLine("Product Name: " + ProductName);
+                Console.WriteLine("Price: " + Price);
+                Console.WriteLine("Stock: " + Stock);
+            }
+
+            // Private Method
+            private void LogTransaction()
+            {
+                // Placeholder for logging product operations
+            }
+
         }
-
-        // Private Method
-        private void SendEmail()
-        {
-            // Placeholder for sending email
-        }
-    }
-
-// Student Class
-public class Student
-{
-    // Properties
-    public int Grade { get; set; }
-    public string Name { get; set; }
-    public string Address { get; set; }
-
-    // Private Property
-    private string email { get; set; }
-
-    // Default Access (private)
-    int age { get; set; }
-
-    // Register Method
-    public void Register(string Email)
-    {
-        email = Email;
-        SendEmail();
-    }
-
-    // Private Method
-    private void SendEmail()
-    {
-        // Placeholder for sending email
-    }
-}
-
-// Product Class
-public class Product
-{
-    // Properties
-    public int ProductID { get; set; }
-    public string ProductName { get; set; }
-    public double Price { get; set; }
-    public int Stock { get; set; }
-
-    // Method
-    public void Restock(int quantity)
-    {
-        Stock += quantity;
-        LogTransaction();
-    }
-
-    // Method
-    public void Sell(int quantity)
-    {
-        if (Stock >= quantity)
-        {
-            Stock -= quantity;
-        }
-
-        LogTransaction();
-    }
-
-    // Method
-    public void ViewDetails()
-    {
-        PrintDetails();
-    }
-
-    // Private Method
-    private void PrintDetails()
-    {
-        Console.WriteLine("Product ID: " + ProductID);
-        Console.WriteLine("Product Name: " + ProductName);
-        Console.WriteLine("Price: " + Price);
-        Console.WriteLine("Stock: " + Stock);
-    }
-
-    // Private Method
-    private void LogTransaction()
-    {
-        // Placeholder for logging product operations
     }
 }
