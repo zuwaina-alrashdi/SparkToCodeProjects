@@ -172,6 +172,32 @@ namespace OOP_Part1
 
                         break;
 
+                    // Case 4 - Make a Withdrawal
+
+                    case 4:
+
+                        Console.Write("Choose account (1 or 2): ");
+                        accountChoice = int.Parse(Console.ReadLine());
+
+                        Console.Write("Enter withdrawal amount: ");
+                        double withdraw = double.Parse(Console.ReadLine());
+
+                        if (accountChoice == 1)
+                        {
+                            account1.Withdraw(withdraw);
+                            Console.WriteLine("Updated Balance: " + account1.Balance);
+                        }
+                        else if (accountChoice == 2)
+                        {
+                            account2.Withdraw(withdraw);
+                            Console.WriteLine("Updated Balance: " + account2.Balance);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid account.");
+                        }
+
+                        break;
 
                 }
 
