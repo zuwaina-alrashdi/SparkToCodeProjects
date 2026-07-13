@@ -76,3 +76,51 @@ public class Student
     }
 }
 
+// Product Class
+public class Product
+{
+    // Properties
+    public int ProductID { get; set; }
+    public string ProductName { get; set; }
+    public double Price { get; set; }
+    public int Stock { get; set; }
+
+    // Method
+    public void Restock(int quantity)
+    {
+        Stock += quantity;
+        LogTransaction();
+    }
+
+    // Method
+    public void Sell(int quantity)
+    {
+        if (Stock >= quantity)
+        {
+            Stock -= quantity;
+        }
+
+        LogTransaction();
+    }
+
+    // Method
+    public void ViewDetails()
+    {
+        PrintDetails();
+    }
+
+    // Private Method
+    private void PrintDetails()
+    {
+        Console.WriteLine("Product ID: " + ProductID);
+        Console.WriteLine("Product Name: " + ProductName);
+        Console.WriteLine("Price: " + Price);
+        Console.WriteLine("Stock: " + Stock);
+    }
+
+    // Private Method
+    private void LogTransaction()
+    {
+        // Placeholder for logging product operations
+    }
+}
