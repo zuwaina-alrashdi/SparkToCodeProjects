@@ -115,6 +115,34 @@ namespace OOP_Part1
                         }
 
                         break;
+
+                    // Case 2 - Update Student Address
+
+                    case 2:
+
+                        Console.Write("Choose student (1 or 2): ");
+                        int studentChoice = int.Parse(Console.ReadLine());
+
+                        Console.Write("Enter new address: ");
+                        string newAddress = Console.ReadLine();
+
+                        if (studentChoice == 1)
+                        {
+                            student1.Address = newAddress;
+                            Console.WriteLine("New Address: " + student1.Address);
+                        }
+                        else if (studentChoice == 2)
+                        {
+                            student2.Address = newAddress;
+                            Console.WriteLine("New Address: " + student2.Address);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid student.");
+                        }
+
+                        break;
+
                 }
 
             }
