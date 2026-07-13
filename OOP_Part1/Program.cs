@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        // Bank Account Objects
+        // BankAccount Objects
 
         static BankAccount account1 = new BankAccount();
         static BankAccount account2 = new BankAccount();
@@ -17,7 +17,54 @@
         static Product product1 = new Product();
         static Product product2 = new Product();
 
+        static void Main(string[] args)
+        {
+            // Bank Account 1
+
+            account1.AccountNumber = 1163;
+            account1.HolderName = "karim";
+            account1.Balance = 120;
+
+            // Bank Account 2
+
+            account2.AccountNumber = 15203;
+            account2.HolderName = "Ali";
+            account2.Balance = 63;
+
+            // Student 1
+
+            student1.Name = "Ali";
+            student1.Address = "Muscat";
+            student1.Grade = 65;
+            student1.Register("ali@gmail.com");
+
+
+            // Student 2
+
+            student2.Name = "Ahmed";
+            student2.Address = "Muscat";
+            student2.Grade = 70;
+            student2.Register("ahmed@gmail.com");
+
+            // Product 1
+
+            product1.ProductID = 1;
+            product1.ProductName = "Wireless Mouse";
+            product1.Price = 5.500;
+            product1.Stock = 50;
+
+            // Product 2
+
+            product2.ProductID = 2;
+            product2.ProductName = "Mechanical Keyboard";
+            product2.Price = 15.750;
+            product2.Stock = 20;
+
+            // Menu will be added here in the next requirement.
+
+        }
     }
+
 }
 
 // BankAccount Class 
