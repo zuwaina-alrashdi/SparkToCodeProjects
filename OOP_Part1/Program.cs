@@ -46,5 +46,33 @@
             // Placeholder for sending email
         }
     }
-    
+}
+
+// Student Class
+public class Student
+{
+    // Properties
+    public int Grade { get; set; }
+    public string Name { get; set; }
+    public string Address { get; set; }
+
+    // Private Property
+    private string email { get; set; }
+
+    // Default Access (private)
+    int age { get; set; }
+
+    // Register Method
+    public void Register(string Email)
+    {
+        email = Email;
+        SendEmail();
     }
+
+    // Private Method
+    private void SendEmail()
+    {
+        // Placeholder for sending email
+    }
+}
+
