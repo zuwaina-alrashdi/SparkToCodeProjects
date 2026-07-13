@@ -143,6 +143,36 @@ namespace OOP_Part1
 
                         break;
 
+                    // Case 3 - Make a Deposit
+
+                    case 3:
+
+                        Console.Write("Choose account (1 or 2): ");
+                        accountChoice = int.Parse(Console.ReadLine());
+
+                        Console.Write("Enter deposit amount: ");
+                        double deposit = double.Parse(Console.ReadLine());
+
+                        if (accountChoice == 1)
+                        {
+                            account1.Deposit(deposit);
+                            Console.WriteLine(account1.HolderName);
+                            Console.WriteLine(account1.Balance);
+                        }
+                        else if (accountChoice == 2)
+                        {
+                            account2.Deposit(deposit);
+                            Console.WriteLine(account2.HolderName);
+                            Console.WriteLine(account2.Balance);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid account.");
+                        }
+
+                        break;
+
+
                 }
 
             }
