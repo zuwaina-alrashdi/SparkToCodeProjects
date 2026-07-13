@@ -199,6 +199,29 @@ namespace OOP_Part1
 
                         break;
 
+                    // Case 5 - View Product Details
+
+                    case 5:
+
+                        Console.Write("Choose product (1 or 2): ");
+                        int productChoice = int.Parse(Console.ReadLine());
+
+                        if (productChoice == 1)
+                        {
+                            double total = product1.GetInventoryValue();
+                            Console.WriteLine("Inventory Value: " + total);
+                        }
+                        else if (productChoice == 2)
+                        {
+                            double total = product2.GetInventoryValue();
+                            Console.WriteLine("Inventory Value: " + total);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid product.");
+                        }
+
+                        break;
                 }
 
             }
