@@ -222,6 +222,34 @@ namespace OOP_Part1
                         }
 
                         break;
+
+                    // Case 6 - Register a Student
+
+                    case 6:
+
+                        Console.Write("Choose student (1 or 2): ");
+                        int studentNumber = int.Parse(Console.ReadLine());
+
+                        Console.Write("Enter email: ");
+                        string email = Console.ReadLine();
+
+                        if (studentNumber == 1)
+                        {
+                            student1.Register(email);
+                            Console.WriteLine("Student registered successfully.");
+                        }
+                        else if (studentNumber == 2)
+                        {
+                            student2.Register(email);
+                            Console.WriteLine("Student registered successfully.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid student.");
+                        }
+
+                        break;
+
                 }
 
             }
