@@ -90,7 +90,13 @@ namespace OOP_Part1
 
                 Console.Write("Choose an option: ");
 
-                int choice = int.Parse(Console.ReadLine());
+                int choice;
+
+                if (!int.TryParse(Console.ReadLine(), out choice))
+                {
+                    Console.WriteLine("Invalid input.");
+                    continue;
+                }
 
                 // Case 1 - View Account Details
 
@@ -342,6 +348,12 @@ namespace OOP_Part1
                             Console.Write("Enter starting balance: ");
                             double balance = double.Parse(Console.ReadLine());
 
+                            if (balance < 0)
+                            {
+                                Console.WriteLine("Balance cannot be negative.");
+                                break;
+                            }
+
                             BankAccount newAccount = new BankAccount(accountNumber, holderName, balance);
 
                             Console.WriteLine("Account created successfully!");
@@ -411,12 +423,28 @@ namespace OOP_Part1
                             if (studentChoice == 1)
                             {
                                 student1.SecurityPIN = pin;
-                                Console.WriteLine("Security PIN has been set successfully.");
+
+                                if (student1.PinSet)
+                                {
+                                    Console.WriteLine("Security PIN has been set successfully.");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("PIN must be exactly 4 digits.");
+                                }
                             }
                             else if (studentChoice == 2)
                             {
                                 student2.SecurityPIN = pin;
-                                Console.WriteLine("Security PIN has been set successfully.");
+
+                                if (student2.PinSet)
+                                {
+                                    Console.WriteLine("Security PIN has been set successfully.");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("PIN must be exactly 4 digits.");
+                                }
                             }
                             else
                             {
@@ -477,8 +505,15 @@ namespace OOP_Part1
             }
 
             // Deposit Method
+
             public void Deposit(double amount)
             {
+                if (amount <= 0)
+                {
+                    Console.WriteLine("Invalid deposit amount.");
+                    return;
+                }
+
                 Balance += amount;
                 SendEmail();
             }
@@ -486,14 +521,25 @@ namespace OOP_Part1
             // Withdraw Method
             public void Withdraw(double amount)
             {
+                if (amount <= 0)
+                {
+                    Console.WriteLine("Invalid withdrawal amount.");
+                    return;
+                }
+
                 if (Balance >= amount)
                 {
                     Balance -= amount;
+                }
+                else
+                {
+                    Console.WriteLine("Insufficient balance.");
                 }
 
                 SendEmail();
             }
 
+            // Check Balance Method
             // Check Balance Method
             public double CheckBalance()
             {
@@ -529,15 +575,25 @@ namespace OOP_Part1
 
             private string pin;
 
+            public bool PinSet { get; private set; }
+
             public string SecurityPIN
             {
                 set
                 {
-                    pin = value;
+                    if (value.Length == 4 && int.TryParse(value, out _))
+                    {
+                        pin = value;
+                        PinSet = true;
+                    }
+                    else
+                    {
+                        PinSet = false;
+                    }
                 }
             }
 
-            public static int StudentCount = 0;
+            private static int StudentCount = 0;
 
             public Student()
             {
@@ -575,6 +631,12 @@ namespace OOP_Part1
             // Method
             public void Restock(int quantity)
             {
+                if (quantity <= 0)
+                {
+                    Console.WriteLine("Invalid quantity.");
+                    return;
+                }
+
                 Stock += quantity;
                 LogTransaction();
             }
@@ -582,9 +644,19 @@ namespace OOP_Part1
             // Method
             public void Sell(int quantity)
             {
+                if (quantity <= 0)
+                {
+                    Console.WriteLine("Invalid quantity.");
+                    return;
+                }
+
                 if (Stock >= quantity)
                 {
                     Stock -= quantity;
+                }
+                else
+                {
+                    Console.WriteLine("Not enough stock.");
                 }
 
                 LogTransaction();
