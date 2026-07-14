@@ -250,6 +250,24 @@ namespace OOP_Part1
 
                         break;
 
+                    // Case 7 - Compare Two Account Balances
+
+                    case 7:
+
+                        if (account1.Balance > account2.Balance)
+                        {
+                            Console.WriteLine(account1.HolderName + " has the higher balance.");
+                        }
+                        else if (account2.Balance > account1.Balance)
+                        {
+                            Console.WriteLine(account2.HolderName + " has the higher balance.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Both accounts have the same balance.");
+                        }
+
+                        break;
                 }
 
             }
