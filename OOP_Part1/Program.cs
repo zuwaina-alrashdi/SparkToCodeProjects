@@ -360,6 +360,46 @@ namespace OOP_Part1
                             break;
                         }
 
+                    // Case 18 - Overdrawn Account Check [Read-Only Property]
+
+                    case 18:
+                        {
+                            Console.Write("Choose account (1 or 2): ");
+                            int accountChoice = int.Parse(Console.ReadLine());
+
+                            if (accountChoice == 1)
+                            {
+                                if (account1.IsOverdrawn)
+                                {
+                                    Console.WriteLine("Account is overdrawn.");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Account is not overdrawn.");
+                                }
+                            }
+                            else if (accountChoice == 2)
+                            {
+                                if (account2.IsOverdrawn)
+                                {
+                                    Console.WriteLine("Account is overdrawn.");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Account is not overdrawn.");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid account.");
+                            }
+
+                            break;
+                        }
+
+
+
+
                 }
 
             }
@@ -373,6 +413,13 @@ namespace OOP_Part1
             public string HolderName { get; set; }
             public double Balance { get; set; }
 
+            public bool IsOverdrawn
+            {
+                get
+                {
+                    return Balance < 0;
+                }
+            }
 
             // Default Constructor
             public BankAccount()
