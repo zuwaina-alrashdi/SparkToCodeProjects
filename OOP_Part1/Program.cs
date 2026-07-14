@@ -398,7 +398,33 @@ namespace OOP_Part1
                         }
 
 
+                    // Case 19 - Set Student Security PIN [Write-Only Property]
 
+                    case 19:
+                        {
+                            Console.Write("Choose student (1 or 2): ");
+                            int studentChoice = int.Parse(Console.ReadLine());
+
+                            Console.Write("Enter a 4-digit PIN: ");
+                            string pin = Console.ReadLine();
+
+                            if (studentChoice == 1)
+                            {
+                                student1.SecurityPIN = pin;
+                                Console.WriteLine("Security PIN has been set successfully.");
+                            }
+                            else if (studentChoice == 2)
+                            {
+                                student2.SecurityPIN = pin;
+                                Console.WriteLine("Security PIN has been set successfully.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid student.");
+                            }
+
+                            break;
+                        }
 
                 }
 
@@ -484,9 +510,17 @@ namespace OOP_Part1
 
             // Private Property
             private string email { get; set; }
-
-            // Default Access (private)
             int age { get; set; }
+
+            private string pin;
+
+            public string SecurityPIN
+            {
+                set
+                {
+                    pin = value;
+                }
+            }
 
             public static int StudentCount = 0;
 
