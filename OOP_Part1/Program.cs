@@ -329,7 +329,28 @@ namespace OOP_Part1
                             break;
                         }
 
+                    // Case 16 - Quick Account Opening [Parameterized Constructor]
 
+                    case 16:
+                        {
+                            Console.Write("Enter account number: ");
+                            int accountNumber = int.Parse(Console.ReadLine());
+
+                            Console.Write("Enter holder name: ");
+                            string holderName = Console.ReadLine();
+
+                            Console.Write("Enter starting balance: ");
+                            double balance = double.Parse(Console.ReadLine());
+
+                            BankAccount newAccount = new BankAccount(accountNumber, holderName, balance);
+
+                            Console.WriteLine("Account created successfully!");
+                            Console.WriteLine("Account Number: " + newAccount.AccountNumber);
+                            Console.WriteLine("Holder Name: " + newAccount.HolderName);
+                            Console.WriteLine("Balance: " + newAccount.Balance);
+
+                            break;
+                        }
                 }
 
             }
@@ -342,6 +363,11 @@ namespace OOP_Part1
             public int AccountNumber { get; set; }
             public string HolderName { get; set; }
             public double Balance { get; set; }
+
+            public BankAccount()
+            {
+
+            }
 
             // Parameterized Constructor
             public BankAccount(int accountNumber, string holderName, double balance)
