@@ -426,6 +426,21 @@ namespace OOP_Part1
                             break;
                         }
 
+
+                    // Case 20 - Exit
+
+                    case 20:
+                        {
+                            exitApp = true;
+                            Console.WriteLine("Thank you for using the Banking System. Goodbye!");
+                            break;
+                        }
+
+                    default:
+                        {
+                            Console.WriteLine("Invalid option. Please choose a number between 1 and 20.");
+                            break;
+                        }
                 }
 
             }
