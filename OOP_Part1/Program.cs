@@ -351,6 +351,15 @@ namespace OOP_Part1
 
                             break;
                         }
+
+                    // Case 17 - Total Students Counter [Static Fields & Methods]
+
+                    case 17:
+                        {
+                            Console.WriteLine("Total Students: " + Student.GetStudentCount());
+                            break;
+                        }
+
                 }
 
             }
@@ -431,6 +440,18 @@ namespace OOP_Part1
 
             // Default Access (private)
             int age { get; set; }
+
+            public static int StudentCount = 0;
+
+            public Student()
+            {
+                StudentCount++;
+            }
+
+            public static int GetStudentCount()
+            {
+                return StudentCount;
+            }
 
             // Register Method
             public void Register(string Email)
