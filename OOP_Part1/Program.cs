@@ -328,6 +328,8 @@ namespace OOP_Part1
 
                             break;
                         }
+
+
                 }
 
             }
@@ -340,6 +342,14 @@ namespace OOP_Part1
             public int AccountNumber { get; set; }
             public string HolderName { get; set; }
             public double Balance { get; set; }
+
+            // Parameterized Constructor
+            public BankAccount(int accountNumber, string holderName, double balance)
+            {
+                AccountNumber = accountNumber;
+                HolderName = holderName;
+                Balance = balance;
+            }
 
             // Deposit Method
             public void Deposit(double amount)
