@@ -1,4 +1,5 @@
-﻿using System.Security.Principal;
+﻿using System.Collections;
+using System.Security.Principal;
 
 namespace OOP_Part1
 {
@@ -97,177 +98,236 @@ namespace OOP_Part1
                 {
 
                     case 1:
-
-                        Console.Write("Choose account (1 or 2): ");
-                        int accountChoice = int.Parse(Console.ReadLine());
-
-                        if (accountChoice == 1)
                         {
-                            account1.CheckBalance();
-                        }
-                        else if (accountChoice == 2)
-                        {
-                            account2.CheckBalance();
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid account.");
-                        }
+                            Console.Write("Choose account (1 or 2): ");
+                            int accountChoice = int.Parse(Console.ReadLine());
 
-                        break;
+                            if (accountChoice == 1)
+                            {
+                                account1.CheckBalance();
+                            }
+                            else if (accountChoice == 2)
+                            {
+                                account2.CheckBalance();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid account.");
+                            }
+
+                            break;
+                        }
 
                     // Case 2 - Update Student Address
 
                     case 2:
-
-                        Console.Write("Choose student (1 or 2): ");
-                        int studentChoice = int.Parse(Console.ReadLine());
-
-                        Console.Write("Enter new address: ");
-                        string newAddress = Console.ReadLine();
-
-                        if (studentChoice == 1)
                         {
-                            student1.Address = newAddress;
-                            Console.WriteLine("New Address: " + student1.Address);
-                        }
-                        else if (studentChoice == 2)
-                        {
-                            student2.Address = newAddress;
-                            Console.WriteLine("New Address: " + student2.Address);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid student.");
-                        }
+                            Console.Write("Choose student (1 or 2): ");
+                            int studentChoice = int.Parse(Console.ReadLine());
 
-                        break;
+                            Console.Write("Enter new address: ");
+                            string newAddress = Console.ReadLine();
+
+                            if (studentChoice == 1)
+                            {
+                                student1.Address = newAddress;
+                                Console.WriteLine("New Address: " + student1.Address);
+                            }
+                            else if (studentChoice == 2)
+                            {
+                                student2.Address = newAddress;
+                                Console.WriteLine("New Address: " + student2.Address);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid student.");
+                            }
+
+                            break;
+                        }
 
                     // Case 3 - Make a Deposit
 
                     case 3:
-
-                        Console.Write("Choose account (1 or 2): ");
-                        accountChoice = int.Parse(Console.ReadLine());
-
-                        Console.Write("Enter deposit amount: ");
-                        double deposit = double.Parse(Console.ReadLine());
-
-                        if (accountChoice == 1)
                         {
-                            account1.Deposit(deposit);
-                            Console.WriteLine(account1.HolderName);
-                            Console.WriteLine(account1.Balance);
-                        }
-                        else if (accountChoice == 2)
-                        {
-                            account2.Deposit(deposit);
-                            Console.WriteLine(account2.HolderName);
-                            Console.WriteLine(account2.Balance);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid account.");
-                        }
+                            Console.Write("Choose account (1 or 2): ");
+                            int accountChoice = int.Parse(Console.ReadLine());
 
-                        break;
+                            Console.Write("Enter deposit amount: ");
+                            double deposit = double.Parse(Console.ReadLine());
+
+                            if (accountChoice == 1)
+                            {
+                                account1.Deposit(deposit);
+                                Console.WriteLine(account1.HolderName);
+                                Console.WriteLine(account1.Balance);
+                            }
+                            else if (accountChoice == 2)
+                            {
+                                account2.Deposit(deposit);
+                                Console.WriteLine(account2.HolderName);
+                                Console.WriteLine(account2.Balance);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid account.");
+                            }
+
+                            break;
+                        }
 
                     // Case 4 - Make a Withdrawal
 
                     case 4:
-
-                        Console.Write("Choose account (1 or 2): ");
-                        accountChoice = int.Parse(Console.ReadLine());
-
-                        Console.Write("Enter withdrawal amount: ");
-                        double withdraw = double.Parse(Console.ReadLine());
-
-                        if (accountChoice == 1)
                         {
-                            account1.Withdraw(withdraw);
-                            Console.WriteLine("Updated Balance: " + account1.Balance);
-                        }
-                        else if (accountChoice == 2)
-                        {
-                            account2.Withdraw(withdraw);
-                            Console.WriteLine("Updated Balance: " + account2.Balance);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid account.");
-                        }
+                            Console.Write("Choose account (1 or 2): ");
+                            int accountChoice = int.Parse(Console.ReadLine());
 
-                        break;
+                            Console.Write("Enter withdrawal amount: ");
+                            double withdraw = double.Parse(Console.ReadLine());
+
+                            if (accountChoice == 1)
+                            {
+                                account1.Withdraw(withdraw);
+                                Console.WriteLine("Updated Balance: " + account1.Balance);
+                            }
+                            else if (accountChoice == 2)
+                            {
+                                account2.Withdraw(withdraw);
+                                Console.WriteLine("Updated Balance: " + account2.Balance);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid account.");
+                            }
+
+                            break;
+                        }
 
                     // Case 5 - View Product Details
 
                     case 5:
-
-                        Console.Write("Choose product (1 or 2): ");
-                        int productChoice = int.Parse(Console.ReadLine());
-
-                        if (productChoice == 1)
                         {
-                            double total = product1.GetInventoryValue();
-                            Console.WriteLine("Inventory Value: " + total);
-                        }
-                        else if (productChoice == 2)
-                        {
-                            double total = product2.GetInventoryValue();
-                            Console.WriteLine("Inventory Value: " + total);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid product.");
-                        }
+                            Console.Write("Choose product (1 or 2): ");
+                            int productChoice = int.Parse(Console.ReadLine());
 
-                        break;
+                            if (productChoice == 1)
+                            {
+                                double total = product1.GetInventoryValue();
+                                Console.WriteLine("Inventory Value: " + total);
+                            }
+                            else if (productChoice == 2)
+                            {
+                                double total = product2.GetInventoryValue();
+                                Console.WriteLine("Inventory Value: " + total);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid product.");
+                            }
+
+                            break;
+                        }
 
                     // Case 6 - Register a Student
 
                     case 6:
-
-                        Console.Write("Choose student (1 or 2): ");
-                        int studentNumber = int.Parse(Console.ReadLine());
-
-                        Console.Write("Enter email: ");
-                        string email = Console.ReadLine();
-
-                        if (studentNumber == 1)
                         {
-                            student1.Register(email);
-                            Console.WriteLine("Student registered successfully.");
-                        }
-                        else if (studentNumber == 2)
-                        {
-                            student2.Register(email);
-                            Console.WriteLine("Student registered successfully.");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid student.");
-                        }
+                            Console.Write("Choose student (1 or 2): ");
+                            int studentNumber = int.Parse(Console.ReadLine());
 
-                        break;
+                            Console.Write("Enter email: ");
+                            string email = Console.ReadLine();
+
+                            if (studentNumber == 1)
+                            {
+                                student1.Register(email);
+                                Console.WriteLine("Student registered successfully.");
+                            }
+                            else if (studentNumber == 2)
+                            {
+                                student2.Register(email);
+                                Console.WriteLine("Student registered successfully.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid student.");
+                            }
+
+                            break;
+                        }
 
                     // Case 7 - Compare Two Account Balances
 
                     case 7:
+                        {
+                            if (account1.Balance > account2.Balance)
+                            {
+                                Console.WriteLine(account1.HolderName + " has the higher balance.");
+                            }
+                            else if (account2.Balance > account1.Balance)
+                            {
+                                Console.WriteLine(account2.HolderName + " has the higher balance.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Both accounts have the same balance.");
+                            }
 
-                        if (account1.Balance > account2.Balance)
-                        {
-                            Console.WriteLine(account1.HolderName + " has the higher balance.");
+                            break;
                         }
-                        else if (account2.Balance > account1.Balance)
-                        {
-                            Console.WriteLine(account2.HolderName + " has the higher balance.");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Both accounts have the same balance.");
-                        }
+                       
+                    // Case 8 - Restock Product & Stock Level Check
 
-                        break;
+                    case 8:
+                        {
+                            Console.Write("Choose product (1 or 2): ");
+                            int productChoice = int.Parse(Console.ReadLine());
+
+                            Console.Write("Enter quantity to add: ");
+                            int quantity = int.Parse(Console.ReadLine());
+
+                            if (productChoice == 1)
+                            {
+                                product1.Restock(quantity);
+
+                                if (product1.Stock < 10)
+                                {
+                                    Console.WriteLine("Stock Level: Low");
+                                }
+                                else if (product1.Stock < 50)
+                                {
+                                    Console.WriteLine("Stock Level: Moderate");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Stock Level: Well Stocked");
+                                }
+                            }
+                            else if (productChoice == 2)
+                            {
+                                product2.Restock(quantity);
+
+                                if (product2.Stock < 10)
+                                {
+                                    Console.WriteLine("Stock Level: Low");
+                                }
+                                else if (product2.Stock < 50)
+                                {
+                                    Console.WriteLine("Stock Level: Moderate");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Stock Level: Well Stocked");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid product.");
+                            }
+
+                            break;
+                        }
                 }
 
             }
