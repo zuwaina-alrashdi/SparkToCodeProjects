@@ -157,6 +157,53 @@
                             break;
                         }
 
+                    // Case 02 Register New Guest
+
+                    case 2:
+                        {
+                            Console.Write("Enter Guest Name: ");
+                            string guestName = Console.ReadLine();
+
+                            Console.Write("Enter Check-In Date: ");
+                            string checkInDate = Console.ReadLine();
+
+                            Console.Write("Enter Number of Nights: ");
+
+                            int totalNights;
+
+                            if (!int.TryParse(Console.ReadLine(), out totalNights) || totalNights <= 0)
+                            {
+                                Console.WriteLine("Invalid number of nights.");
+                                break;
+                            }
+
+
+                            // Auto generate Guest ID using Count()
+                            string guestId = "G" + (guests.Count() + 1).ToString("D3");
+
+
+                            Guest newGuest = new Guest
+                            (
+                                guestId,
+                                guestName,
+                                "Not Assigned",
+                                checkInDate,
+                                totalNights
+                            );
+
+
+                            guests.Add(newGuest);
+
+
+                            Console.WriteLine("Guest Registered Successfully!");
+                            Console.WriteLine("Guest ID: " + newGuest.guestId);
+                            Console.WriteLine("Guest Name: " + newGuest.guestName);
+                            Console.WriteLine("Check-In Date: " + newGuest.checkInDate);
+                            Console.WriteLine("Total Nights: " + newGuest.totalNights);
+
+                            break;
+                        }
+
                 }
             }
         }
