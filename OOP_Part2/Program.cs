@@ -204,11 +204,84 @@
                             break;
                         }
 
+                    // Case 03 Book a Room for a Guest
+
+                    case 3:
+                        {
+                            Console.Write("Enter Guest ID: ");
+                            string guestId = Console.ReadLine();
+
+
+                            // Find guest using FirstOrDefault()
+                            Guest selectedGuest = guests.FirstOrDefault (g => g.guestId == guestId);
+
+
+                            if (selectedGuest == null)
+                            {
+                                Console.WriteLine("Guest not found.");
+                                break;
+                            }
+
+
+
+                            Console.Write("Enter Room Number: ");
+
+                            int roomNumber;
+
+                            if (!int.TryParse(Console.ReadLine(), out roomNumber))
+                            {
+                                Console.WriteLine("Invalid room number.");
+                                break;
+                            }
+
+
+                            // Find room using FirstOrDefault()
+                            Room selectedRoom = rooms.FirstOrDefault(r => r.roomNumber == roomNumber);
+
+
+                            if (selectedRoom == null)
+                            {
+                                Console.WriteLine("Room not found.");
+                                break;
+                            }
+
+
+
+                            if (!selectedRoom.isAvailable)
+                            {
+                                Console.WriteLine("Room is already booked.");
+                                break;
+                            }
+
+
+
+                            // Update objects directly
+                            selectedGuest.roomNumber = selectedRoom.roomNumber.ToString();
+
+                            selectedRoom.isAvailable = false;
+
+
+
+                            Console.WriteLine("Booking Confirmed!");
+                            Console.WriteLine("-------------------");
+                            Console.WriteLine("Guest Name: " + selectedGuest.guestName);
+                            Console.WriteLine("Room Number: " + selectedRoom.roomNumber);
+                            Console.WriteLine("Room Type: " + selectedRoom.roomType);
+                            Console.WriteLine("Price Per Night: " + selectedRoom.pricePerNight);
+                            Console.WriteLine("Total Nights: " + selectedGuest.totalNights);
+
+                            Console.WriteLine("Total Cost: " +
+                            selectedGuest.calculateTotalCost(selectedRoom.pricePerNight));
+
+
+                            break;
+                        }
                 }
             }
         }
     }
 }
 
-  
+
+
 
