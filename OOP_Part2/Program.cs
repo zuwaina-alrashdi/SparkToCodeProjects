@@ -286,7 +286,7 @@
                             }
 
 
-                            Console.WriteLine("ALL ROOMS");
+                            Console.WriteLine("ALL ROOMS: ");
 
                             Console.WriteLine("Total Rooms: " + rooms.Count());
 
@@ -312,6 +312,48 @@
                                 Console.WriteLine("Room Type: " + room.Type);
                                 Console.WriteLine("Price Per Night: " + room.Price);
                                 Console.WriteLine("Status: " + room.Status);
+                            }
+
+                            break;
+                        }
+
+                    // Case 05 View All Guests
+
+                    case 5:
+                        {
+                            if (guests.Count() == 0)
+                            {
+                                Console.WriteLine("No guests have been registered yet.");
+                                break;
+                            }
+
+
+                            Console.WriteLine("ALL GUESTS: ");
+
+                            Console.WriteLine("Total Guests: " + guests.Count());
+
+
+                            // Order guests by name and use Select()
+                            var guestList = guests
+                                .OrderBy(g => g.guestName)
+                                .Select(g => new
+                                {
+                                    ID = g.guestId,
+                                    Name = g.guestName,
+                                    Room = g.roomNumber,
+                                    Date = g.checkInDate,
+                                    Nights = g.totalNights
+                                })
+                                .ToList();
+
+                            foreach (var guest in guestList)
+                            {
+                                Console.WriteLine("---------------------");
+                                Console.WriteLine("Guest ID: " + guest.ID);
+                                Console.WriteLine("Guest Name: " + guest.Name);
+                                Console.WriteLine("Room Number: " + guest.Room);
+                                Console.WriteLine("Check-In Date: " + guest.Date);
+                                Console.WriteLine("Total Nights: " + guest.Nights);
                             }
 
                             break;
