@@ -223,7 +223,6 @@
                             }
 
 
-
                             Console.Write("Enter Room Number: ");
 
                             int roomNumber;
@@ -252,8 +251,6 @@
                                 Console.WriteLine("Room is already booked.");
                                 break;
                             }
-
-
 
                             // Update objects directly
                             selectedGuest.roomNumber = selectedRoom.roomNumber.ToString();
@@ -302,7 +299,6 @@
                                     Status = r.isAvailable ? "Available" : "Booked"
                                 })
                                 .ToList();
-
 
 
                             foreach (var room in roomList)
