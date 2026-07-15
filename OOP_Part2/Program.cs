@@ -79,7 +79,7 @@
 
             while (!exit)
             {
-                Console.WriteLine("GRAND VISTA HOTE");
+                Console.WriteLine("GRAND VISTA HOTEL");
                 Console.WriteLine("1. Add New Room");
                 Console.WriteLine("2. Register New Guest");
                 Console.WriteLine("3. Book a Room");
@@ -260,8 +260,6 @@
 
                             selectedRoom.isAvailable = false;
 
-
-
                             Console.WriteLine("Booking Confirmed!");
                             Console.WriteLine("-------------------");
                             Console.WriteLine("Guest Name: " + selectedGuest.guestName);
@@ -273,6 +271,48 @@
                             Console.WriteLine("Total Cost: " +
                             selectedGuest.calculateTotalCost(selectedRoom.pricePerNight));
 
+
+                            break;
+                        }
+
+                    // Case 04 View All Rooms
+
+                    case 4:
+                        {
+                            if (rooms.Count() == 0)
+                            {
+                                Console.WriteLine("No rooms have been added yet.");
+                                break;
+                            }
+
+
+                            Console.WriteLine("ALL ROOMS");
+
+                            Console.WriteLine("Total Rooms: " + rooms.Count());
+
+
+                            // Order rooms by room number and use Select()
+                            var roomList = rooms
+                                .OrderBy(r => r.roomNumber)
+                                .Select(r => new
+                                {
+                                    Number = r.roomNumber,
+                                    Type = r.roomType,
+                                    Price = r.pricePerNight,
+                                    Status = r.isAvailable ? "Available" : "Booked"
+                                })
+                                .ToList();
+
+
+
+                            foreach (var room in roomList)
+                            {
+                                Console.WriteLine("---------------------");
+                                Console.WriteLine("Room Number: " + room.Number);
+                                Console.WriteLine("Room Type: " + room.Type);
+                                Console.WriteLine("Price Per Night: " + room.Price);
+                                Console.WriteLine("Status: " + room.Status);
+                            }
 
                             break;
                         }
