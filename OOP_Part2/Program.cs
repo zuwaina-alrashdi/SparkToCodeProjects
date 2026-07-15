@@ -2,6 +2,8 @@
 {
     internal class Program
     {
+
+        // Room Class
         public class Room
         {
             public int roomNumber;
@@ -24,8 +26,36 @@
                 Console.WriteLine("Price Per Night: " + pricePerNight);
                 Console.WriteLine("Available: " + isAvailable);
             }
-        }
 
-    }
-}
+            // Guest Class 
+            public class Guest
+            {
+                public string guestId;
+                public string guestName;
+                public string roomNumber;
+                public string checkInDate;
+                public int totalNights;
+
+                public Guest(string guestId, string guestName, string roomNumber,
+                             string checkInDate, int totalNights)
+                {
+                    this.guestId = guestId;
+                    this.guestName = guestName;
+                    this.roomNumber = roomNumber;
+                    this.checkInDate = checkInDate;
+                    this.totalNights = totalNights;
+                }
+
+                public void displayGuest()
+                {
+                    Console.WriteLine("Guest ID: " + guestId);
+                    Console.WriteLine("Guest Name: " + guestName);
+                    Console.WriteLine("Room Number: " + roomNumber);
+                    Console.WriteLine("Check-In Date: " + checkInDate);
+                    Console.WriteLine("Total Nights: " + totalNights);
+                }
+
+            }
+
+        }
 
