@@ -8,4 +8,5 @@
   <Project Path="CsharpTask5/CsharpTask5.csproj" Id="aa37a756-f3d8-4dd8-8e4c-2555e08f1157" />
   <Project Path="Mini-Compound-Project-1/Mini-Compound-Project-1.csproj" Id="43f119db-0bc2-43a9-a8a8-e9b730a51fe3" />
   <Project Path="OOP_Part2/OOP_Part2.csproj" Id="fc25f638-be94-41be-8ae4-744ee5ee9cb9" />
+  <Project Path="OOP_Part1/OOP_Part1.csproj" Id="5e8265ca-6089-4758-9b7e-feed8b406cbb" />
 </Solution>
