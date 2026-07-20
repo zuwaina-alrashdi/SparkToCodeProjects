@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="DatabaseTasks/_Airline Information System Diagram.drawio.png" />
+  </Folder>
   <Project Path="CsharpFunctions/CsharpTask3.csproj" Id="440bd9e8-c919-4c73-a61e-5d706982b212" />
   <Project Path="CsharpSession1/CsharpSession1.csproj" />
   <Project Path="CsharpSession2/CsharpSession2.csproj" Id="8f70e163-5bc2-46fb-b7d2-89e428631a9a" />
