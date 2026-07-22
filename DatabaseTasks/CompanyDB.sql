@@ -52,5 +52,18 @@ FOREIGN KEY (Supervisor_SSN)
 REFERENCES Employee(SSN);
 GO
 
+CREATE TABLE Project
+(
+    Project_Number INT PRIMARY KEY,
 
+    Project_Name VARCHAR(50) NOT NULL UNIQUE,
 
+    Location VARCHAR(50) NOT NULL,
+
+    Department_Number INT NOT NULL,
+
+    CONSTRAINT FK_Project_Department
+    FOREIGN KEY (Department_Number)
+    REFERENCES Department(Department_Number)
+);
+GO
