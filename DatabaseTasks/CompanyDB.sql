@@ -40,5 +40,17 @@ CREATE TABLE Employee
 );
 GO
 
+ALTER TABLE Employee
+ADD CONSTRAINT FK_Employee_Department
+FOREIGN KEY (Department_Number)
+REFERENCES Department(Department_Number);
+GO
+
+ALTER TABLE Employee
+ADD CONSTRAINT FK_Employee_Supervisor
+FOREIGN KEY (Supervisor_SSN)
+REFERENCES Employee(SSN);
+GO
+
 
 
