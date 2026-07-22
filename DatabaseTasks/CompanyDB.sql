@@ -164,3 +164,10 @@ VALUES
 (1,'Nizwa'),
 (2,'Sohar');
 GO
+
+INSERT INTO Project
+(Project_Number,Project_Name,Location,Department_Number)
+VALUES
+(101,'Payroll System','Muscat',1),
+(102,'HR Portal','Sohar',2);
+GO
