@@ -123,3 +123,9 @@ CREATE TABLE Dependent
     REFERENCES Employee(SSN)
 );
 GO
+
+ALTER TABLE Department
+ADD CONSTRAINT FK_Department_Manager
+FOREIGN KEY (Manager_SSN)
+REFERENCES Employee(SSN);
+GO
