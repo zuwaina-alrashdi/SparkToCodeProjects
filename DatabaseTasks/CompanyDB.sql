@@ -171,3 +171,12 @@ VALUES
 (101,'Payroll System','Muscat',1),
 (102,'HR Portal','Sohar',2);
 GO
+
+INSERT INTO Works_On
+VALUES
+('111111111',101,20),
+
+('222222222',101,35),
+
+('333333333',102,30);
+GO
