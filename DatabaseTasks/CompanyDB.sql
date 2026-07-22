@@ -180,3 +180,11 @@ VALUES
 
 ('333333333',102,30);
 GO
+
+INSERT INTO Dependent
+(Employee_SSN, Dependent_Name, Sex, Birthdate, Relationship)
+VALUES
+('111111111','Fatima','F','2018-04-10','Daughter'),
+
+('222222222','Ali','M','2020-06-15','Son');
+GO
