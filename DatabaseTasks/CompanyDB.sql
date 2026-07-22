@@ -129,3 +129,10 @@ ADD CONSTRAINT FK_Department_Manager
 FOREIGN KEY (Manager_SSN)
 REFERENCES Employee(SSN);
 GO
+
+INSERT INTO Department
+(Department_Number, Department_Name, Manager_SSN, ManagerStartDate)
+VALUES
+(1,'IT',NULL,NULL),
+(2,'HR',NULL,NULL);
+GO
