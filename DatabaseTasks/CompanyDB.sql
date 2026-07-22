@@ -157,3 +157,10 @@ SET Manager_SSN='333333333',
     ManagerStartDate='2024-02-01'
 WHERE Department_Number=2;
 GO
+
+INSERT INTO Department_Location
+VALUES
+(1,'Muscat'),
+(1,'Nizwa'),
+(2,'Sohar');
+GO
