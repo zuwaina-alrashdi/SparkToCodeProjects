@@ -146,3 +146,14 @@ VALUES
 
 ('333333333','Omar','K','Hassan','Sohar','M','1993-09-20',1700,2,NULL);
 GO
+
+UPDATE Department
+SET Manager_SSN='111111111',
+    ManagerStartDate='2024-01-01'
+WHERE Department_Number=1;
+
+UPDATE Department
+SET Manager_SSN='333333333',
+    ManagerStartDate='2024-02-01'
+WHERE Department_Number=2;
+GO
