@@ -16,3 +16,29 @@ CREATE TABLE Department
 );
 GO
 
+CREATE TABLE Employee
+(
+    SSN CHAR(9) PRIMARY KEY,
+
+    Fname VARCHAR(30) NOT NULL,
+
+    Minit CHAR(1),
+
+    Lname VARCHAR(30) NOT NULL,
+
+    Address VARCHAR(100),
+
+    Sex CHAR(1) CHECK (Sex IN ('M','F')),
+
+    Bdate DATE,
+
+    Salary DECIMAL(10,2) CHECK (Salary > 0),
+
+    Department_Number INT NOT NULL,
+
+    Supervisor_SSN CHAR(9)
+);
+GO
+
+
+
