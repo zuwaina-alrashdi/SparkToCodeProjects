@@ -199,6 +199,11 @@ SET Location = 'Nizwa'
 WHERE Project_Number = 101;
 GO
 
+UPDATE Works_On
+SET Hours = 40
+WHERE SSN = '222222222'
+AND Project_Number = 101;
+GO
 
 SELECT * FROM Department;
 
