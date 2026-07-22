@@ -1,8 +1,12 @@
+/* CREATE COMPANY DATABASE */
+
 CREATE DATABASE CompanyDB;
 GO
 
 USE CompanyDB;
 GO
+
+/* Department TABLE */
 
 CREATE TABLE Department
 (
@@ -15,6 +19,8 @@ CREATE TABLE Department
     ManagerStartDate DATE
 );
 GO
+
+/* Employee TABLE */
 
 CREATE TABLE Employee
 (
@@ -40,6 +46,8 @@ CREATE TABLE Employee
 );
 GO
 
+/* Employee Foreign Keys */
+
 ALTER TABLE Employee
 ADD CONSTRAINT FK_Employee_Department
 FOREIGN KEY (Department_Number)
@@ -51,6 +59,8 @@ ADD CONSTRAINT FK_Employee_Supervisor
 FOREIGN KEY (Supervisor_SSN)
 REFERENCES Employee(SSN);
 GO
+
+/* Project Table */ 
 
 CREATE TABLE Project
 (
@@ -68,6 +78,8 @@ CREATE TABLE Project
 );
 GO
 
+/* Department Location Table */
+
 CREATE TABLE Department_Location
 (
     Department_Number INT NOT NULL,
@@ -81,6 +93,8 @@ CREATE TABLE Department_Location
     REFERENCES Department(Department_Number)
 );
 GO
+
+/* Works_On Table */
 
 CREATE TABLE Works_On
 (
@@ -103,6 +117,8 @@ CREATE TABLE Works_On
 );
 GO
 
+/* Dependent Table */
+
 CREATE TABLE Dependent
 (
     Employee_SSN CHAR(9) NOT NULL,
@@ -124,11 +140,15 @@ CREATE TABLE Dependent
 );
 GO
 
+/* Department Manager Foreign Key */
+
 ALTER TABLE Department
 ADD CONSTRAINT FK_Department_Manager
 FOREIGN KEY (Manager_SSN)
 REFERENCES Employee(SSN);
 GO
+
+/* Insert data into Department table*/
 
 INSERT INTO Department
 (Department_Number, Department_Name, Manager_SSN, ManagerStartDate)
@@ -136,6 +156,8 @@ VALUES
 (1,'IT',NULL,NULL),
 (2,'HR',NULL,NULL);
 GO
+
+/* Insert data into Employee table*/
 
 INSERT INTO Employee
 (SSN,Fname,Minit,Lname,Address,Sex,Bdate,Salary,Department_Number,Supervisor_SSN)
@@ -146,6 +168,8 @@ VALUES
 
 ('333333333','Omar','K','Hassan','Sohar','M','1993-09-20',1700,2,NULL);
 GO
+
+/* Update Department table*/
 
 UPDATE Department
 SET Manager_SSN='111111111',
@@ -158,6 +182,8 @@ ManagerStartDate='2024-02-01'
 WHERE Department_Number=2;
 GO
 
+/* Insert data into Department table*/
+
 INSERT INTO Department_Location
 VALUES
 (1,'Muscat'),
@@ -165,12 +191,16 @@ VALUES
 (2,'Sohar');
 GO
 
+/* Insert data into project table */
+
 INSERT INTO Project
 (Project_Number,Project_Name,Location,Department_Number)
 VALUES
 (101,'Payroll System','Muscat',1),
 (102,'HR Portal','Sohar',2);
 GO
+
+/* Insert data into works_on table */
 
 INSERT INTO Works_On
 VALUES
@@ -181,6 +211,8 @@ VALUES
 ('333333333',102,30);
 GO
 
+/* Insert data into Dependent table */
+
 INSERT INTO Dependent
 (Employee_SSN, Dependent_Name, Sex, Birthdate, Relationship)
 VALUES
@@ -189,15 +221,21 @@ VALUES
 ('222222222','Ali','M','2020-06-15','Son');
 GO
 
+/* Update Employee table*/
+
 UPDATE Employee
 SET Salary = Salary + 500
 WHERE SSN = '222222222';
 GO
 
+/* Update Project table*/
+
 UPDATE Project
 SET Location = 'Nizwa'
 WHERE Project_Number = 101;
 GO
+
+/* Update works_on table*/
 
 UPDATE Works_On
 SET Hours = 40
@@ -205,15 +243,21 @@ WHERE SSN = '222222222'
 AND Project_Number = 101;
 GO
 
+/* Delete from works_on table*/
+
 DELETE FROM Works_On
 WHERE SSN = '333333333'
 AND Project_Number = 102;
 GO
 
+/* Delete from Dependent table*/
+
 DELETE FROM Dependent
 WHERE Employee_SSN = '222222222'
 AND Dependent_Name = 'Ali';
 GO
+
+/* Select Statements */
 
 SELECT * FROM Department;
 
