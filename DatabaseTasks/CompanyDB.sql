@@ -194,6 +194,10 @@ SET Salary = Salary + 500
 WHERE SSN = '222222222';
 GO
 
+UPDATE Project
+SET Location = 'Nizwa'
+WHERE Project_Number = 101;
+GO
 
 
 SELECT * FROM Department;
