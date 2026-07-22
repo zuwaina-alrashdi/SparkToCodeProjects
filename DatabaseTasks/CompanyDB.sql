@@ -210,6 +210,11 @@ WHERE SSN = '333333333'
 AND Project_Number = 102;
 GO
 
+DELETE FROM Dependent
+WHERE Employee_SSN = '222222222'
+AND Dependent_Name = 'Ali';
+GO
+
 SELECT * FROM Department;
 
 SELECT * FROM Employee;
