@@ -149,12 +149,12 @@ GO
 
 UPDATE Department
 SET Manager_SSN='111111111',
-    ManagerStartDate='2024-01-01'
+ManagerStartDate='2024-01-01'
 WHERE Department_Number=1;
 
 UPDATE Department
 SET Manager_SSN='333333333',
-    ManagerStartDate='2024-02-01'
+ManagerStartDate='2024-02-01'
 WHERE Department_Number=2;
 GO
 
@@ -189,6 +189,13 @@ VALUES
 ('222222222','Ali','M','2020-06-15','Son');
 GO
 
+UPDATE Employee
+SET Salary = Salary + 500
+WHERE SSN = '222222222';
+GO
+
+
+
 SELECT * FROM Department;
 
 SELECT * FROM Employee;
@@ -200,4 +207,6 @@ SELECT * FROM Project;
 SELECT * FROM Works_On;
 
 SELECT * FROM Dependent;
+
+
 
