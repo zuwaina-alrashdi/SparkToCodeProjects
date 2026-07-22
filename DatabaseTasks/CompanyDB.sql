@@ -67,3 +67,17 @@ CREATE TABLE Project
     REFERENCES Department(Department_Number)
 );
 GO
+
+CREATE TABLE Department_Location
+(
+    Department_Number INT NOT NULL,
+
+    Location VARCHAR(50) NOT NULL,
+
+    PRIMARY KEY (Department_Number, Location),
+
+    CONSTRAINT FK_DepartmentLocation_Department
+    FOREIGN KEY (Department_Number)
+    REFERENCES Department(Department_Number)
+);
+GO
