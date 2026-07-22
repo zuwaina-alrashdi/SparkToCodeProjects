@@ -205,6 +205,11 @@ WHERE SSN = '222222222'
 AND Project_Number = 101;
 GO
 
+DELETE FROM Works_On
+WHERE SSN = '333333333'
+AND Project_Number = 102;
+GO
+
 SELECT * FROM Department;
 
 SELECT * FROM Employee;
