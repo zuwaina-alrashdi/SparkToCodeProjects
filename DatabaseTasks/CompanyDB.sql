@@ -136,3 +136,13 @@ VALUES
 (1,'IT',NULL,NULL),
 (2,'HR',NULL,NULL);
 GO
+
+INSERT INTO Employee
+(SSN,Fname,Minit,Lname,Address,Sex,Bdate,Salary,Department_Number,Supervisor_SSN)
+VALUES
+('111111111','Ahmed','A','Ali','Muscat','M','1990-05-10',2500,1,NULL),
+
+('222222222','Sara','M','Salim','Muscat','F','1995-07-15',1800,1,'111111111'),
+
+('333333333','Omar','K','Hassan','Sohar','M','1993-09-20',1700,2,NULL);
+GO
