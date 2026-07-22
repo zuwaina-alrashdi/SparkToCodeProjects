@@ -188,3 +188,16 @@ VALUES
 
 ('222222222','Ali','M','2020-06-15','Son');
 GO
+
+SELECT * FROM Department;
+
+SELECT * FROM Employee;
+
+SELECT * FROM Department_Location;
+
+SELECT * FROM Project;
+
+SELECT * FROM Works_On;
+
+SELECT * FROM Dependent;
+
