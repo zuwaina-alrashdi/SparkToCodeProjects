@@ -81,3 +81,24 @@ CREATE TABLE Department_Location
     REFERENCES Department(Department_Number)
 );
 GO
+
+CREATE TABLE Works_On
+(
+    SSN CHAR(9) NOT NULL,
+
+    Project_Number INT NOT NULL,
+
+    Hours DECIMAL(5,2)
+        CHECK (Hours >= 0),
+
+    PRIMARY KEY (SSN, Project_Number),
+
+    CONSTRAINT FK_WorksOn_Employee
+    FOREIGN KEY (SSN)
+    REFERENCES Employee(SSN),
+
+    CONSTRAINT FK_WorksOn_Project
+    FOREIGN KEY (Project_Number)
+    REFERENCES Project(Project_Number)
+);
+GO
