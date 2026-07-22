@@ -102,3 +102,24 @@ CREATE TABLE Works_On
     REFERENCES Project(Project_Number)
 );
 GO
+
+CREATE TABLE Dependent
+(
+    Employee_SSN CHAR(9) NOT NULL,
+
+    Dependent_Name VARCHAR(50) NOT NULL,
+
+    Sex CHAR(1)
+        CHECK (Sex IN ('M','F')),
+
+    Birthdate DATE,
+
+    Relationship VARCHAR(30),
+
+    PRIMARY KEY (Employee_SSN, Dependent_Name),
+
+    CONSTRAINT FK_Dependent_Employee
+    FOREIGN KEY (Employee_SSN)
+    REFERENCES Employee(SSN)
+);
+GO
